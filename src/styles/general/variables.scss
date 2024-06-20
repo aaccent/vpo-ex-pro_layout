@@ -1,3 +1,21 @@
+@use 'styles/utils';
+
 :root {
+  // Colors
+  --bg-base: hsl(43, 19%, 93%);
+  --base-black: hsl(0, 0%, 5%);
+  --base-gray: hsl(0, 0%, 75%);
+  --yellow: hsl(51, 100%, 60%);
+  --base-white: hsl(0, 0%, 100%);
+  --bg-dark: hsl(0, 0%, 14%);
+  --border-base: hsla(191, 16%, 13%, 0.2);
+
+  // Fonts
   --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --inter: 'Inter', var(--sans);
+  --involve: 'Involve', var(--sans);
+
+  // Filters
+  --filter-black: brightness(0) saturate(100%) invert(11%) sepia(14%) saturate(294%) hue-rotate(149deg) brightness(91%) contrast(86%);
+  --filter-white: brightness(0) saturate(100%) invert(94%) sepia(100%) saturate(16%) hue-rotate(229deg) brightness(105%) contrast(101%);
 }
