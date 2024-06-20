@@ -1,3 +1,5 @@
+@use 'styles/utils';
+
 html {
   overflow-x: clip;
   font-size: 62.5%;
@@ -6,8 +8,20 @@ html {
 
 .container {
   margin: 0 auto;
-  padding: 0 15px;
-  max-width: 1230px;
+  padding: 0;
+  max-width: 1440px;
+
+  @media only screen and (max-width: utils.$tablet1000) {
+    max-width: 350px;
+  }
+}
+
+.section {
+  padding: 0 80px;
+  background-color: var(--bg-base);
+  @media only screen and (max-width: utils.$tablet1000) {
+    padding: 0 20px;
+  }
 }
 
 .main-wrapper {
