@@ -1,0 +1,99 @@
+@use 'styles/utils';
+
+.button {
+  font: 500 1.8rem var(--inter);
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  align-items: center;
+  border-radius: 4px;
+  text-align: center;
+  padding: 14px;
+  border: 1px solid transparent;
+
+  &:after {
+    @include utils.bg-defaults(cover);
+    content: '';
+    display: block;
+    width: 14px;
+    height: 12px;
+    background-image: url("assets/icons/arrow.svg");
+    transform: rotate(-45deg);
+  }
+
+  &-header {
+    background: transparent;
+    border-color: var(--base-black);
+    padding: 12px 0;
+    width: 295px;
+
+    @include utils.hover {
+      border-color: transparent;
+      background-color: var(--base-white);
+    }
+  }
+
+  &-transparent {
+    background: transparent;
+    border-color: var(--base-black);
+    width: 329px;
+
+    @include utils.hover {
+      background-color: var(--yellow);
+      border-color: transparent;
+    }
+  }
+
+  &-white {
+    background-color: var(--base-white);
+    width: 267px;
+
+    @include utils.hover {
+      background-color: var(--yellow);
+    }
+  }
+
+  &-form {
+    width: 279px;
+
+    &--yellow {
+      background-color: var(--yellow);
+
+      @include utils.hover {
+        background-color: var(--base-white);
+      }
+    }
+
+    &--white {
+      background-color: var(--base-white);
+
+      @include utils.hover {
+        background-color: var(--bg-dark);
+        color: var(--base-white);
+
+        &:after {
+          filter: var(--filter-white);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+  .button {
+    font-size: 1.4rem;
+    padding: 11.5px;
+
+    &-white {
+      width: 190px;
+    }
+
+    &-transparent {
+      width: 276px;
+    }
+
+    &-form {
+      width: 237px;
+    }
+  }
+}
