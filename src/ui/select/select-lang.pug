@@ -1,0 +1,23 @@
+include layout/utils
+-
+  var options = [
+    {
+      flagIcon: require('assets/icons/flag_ru.png'),
+      lang: 'RU'
+    },
+    {
+      flagIcon: require('assets/icons/flag_en.png'),
+      lang: 'EN',
+    }
+  ]
+
+.select.select-lang
+  input(type='hidden' value=options[0].lang)
+  .select__selected.select-lang__selected.select-lang__item
+    +img(options[0].flagIcon)
+    +wrapBreak: button=options[0].lang
+  ul.select__list
+    each option in options
+      li.select__item.select-lang__item
+        +img(option.flagIcon)
+        +wrapBreak: button=option.lang
