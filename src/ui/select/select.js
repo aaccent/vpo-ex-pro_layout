@@ -9,7 +9,7 @@ void function () {
     const list = select.querySelector('.select-options')
     const options = select.querySelectorAll('.select-options .select__item')
 
-    select.addEventListener('click', (e) => {
+    select.addEventListener('click', () => {
       list.classList.toggle('_opened')
     })
 
