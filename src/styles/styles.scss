@@ -9,7 +9,9 @@
 
 // Ui
 @use 'ui/buttons/close-btn';
-@use '/ui/buttons/button';
+@use 'ui/buttons/button';
+@use 'ui/input/input';
+@use "ui/select/select";
 
 // Page
 @use 'layout/header/header';

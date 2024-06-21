@@ -1,0 +1,22 @@
+include layout/utils
+-
+  var options = [
+    {
+      flagIcon: require('assets/icons/flag_ru.png'),
+      lang: 'RU',
+    },
+    {
+      flagIcon: require('assets/icons/flag_en.png'),
+      lang: 'EN',
+    }
+  ]
+
+.select.select-lang
+  .select__selected.select-lang__selected.select-lang__item
+    +img(options[0].flagIcon)
+    span=options[0].lang
+  ul.select-options
+    each option in options
+      li.select__item.select-lang__item
+        +img(option.flagIcon)
+        span=option.lang
