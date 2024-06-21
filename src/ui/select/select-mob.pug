@@ -12,11 +12,12 @@ include layout/utils
   ]
 
 .select.select-mobile
+  input(type='hidden' value=options[0].lang)
   .select__selected.select-mobile__selected.select-mobile__item
     +img(options[0].flagIcon)
-    span=options[0].mobLang
-  ul.select-options
+    +wrapBreak: button=options[0].mobLang
+  ul.select__list
     each option in options
       li.select__item.select-mobile__item
         +img(option.flagIcon)
-        span=option.mobLang
+        +wrapBreak: button=option.mobLang
