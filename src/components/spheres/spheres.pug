@@ -1,0 +1,44 @@
+include layout/utils
+
+-
+    var spheres = [
+        {
+            title: 'Химическая промышленность',
+            img: require('assets/content/sphere.jpg?as=webp')
+        },
+        {
+            title: 'Нефтегазовая промышленность',
+            img: require('assets/content/sphere2.jpg?as=webp')
+        },
+        {
+            title: 'Горнодобывающая промышленность',
+            img: require('assets/content/sphere3.jpg?as=webp')
+        },
+        {
+            title: 'Металлургическая промышленность',
+            img: require('assets/content/sphere4.jpg?as=webp')
+        },
+        {
+            title: 'Энергетическая промышленность',
+            img: require('assets/content/sphere5.jpg?as=webp')
+        },
+        {
+            title: 'Пищевая промышленность',
+            img: require('assets/content/sphere6.jpg?as=webp')
+        },
+    ]
+
++section.spheres
+    .spheres__title.float-title Сферы применения
+    .spheres__text Наши взрывозащищённые приточные системы вентиляции обеспечивают безопасные и эффективные решения для различных отраслей промышленности.
+    .spheres-list
+        each item, index in spheres
+            +anchor.spheres__item
+                +img(item.img).spheres__item-img
+                .spheres__item-content
+                    .spheres__item-count=index + 1
+                    .spheres__item-title
+                        p=item.title
+                        .arrow.arrow-animated.spheres__item-button
+    +anchor.button.button-transparent.spheres-button Все сферы применения
+

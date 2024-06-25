@@ -12,6 +12,7 @@
 @use "ui/buttons/button";
 @use "ui/input/input";
 @use "ui/select/select";
+@use "ui/title/float-title";
 @use "ui/arrow/arrow";
 @use "ui/socials/socials";
 @use "ui/form/form";
@@ -19,6 +20,7 @@
 // Components
 @use "components/page-hero/page-hero";
 @use "components/form-section/form-section";
+@use "components/spheres/spheres";
 
 // Page
 @use "layout/header/header";
