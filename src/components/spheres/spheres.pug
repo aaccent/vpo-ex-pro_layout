@@ -29,7 +29,7 @@ include layout/utils
     ]
 
 +section.spheres
-    .spheres__title.float-title Сферы применения
+    h2.spheres__title.float-title Сферы применения
     .spheres__text Наши взрывозащищённые приточные системы вентиляции обеспечивают безопасные и эффективные решения для различных отраслей промышленности.
     .spheres-list
         each item, index in spheres
@@ -38,7 +38,7 @@ include layout/utils
                 .spheres__item-content
                     .spheres__item-count=index + 1
                     .spheres__item-title
-                        p=item.title
+                        +wrapBreak: p=item.title
                         .arrow.arrow-animated.spheres__item-button
     +anchor.button.button-transparent.spheres-button Все сферы применения
 
