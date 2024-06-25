@@ -1,0 +1,14 @@
+include layout/utils
+
++section.reviews
+    h2.reviews__title Отзывы
+    .reviews__subtitle Честное мнение клиентов о нас
+        .reviews__navigation-btns
+            .arrow.arrow--prev.swiper-button-prev
+            .arrow.swiper-button-next
+    .reviews__list.swiper
+        .swiper-wrapper
+            each _ in Array(5)
+                .reviews__item.swiper-slide
+                    .reviews__item-header
+                        +img(require(''))
