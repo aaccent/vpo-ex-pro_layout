@@ -1,169 +1,169 @@
-@use 'styles/utils';
+@use "styles/utils";
 
 .footer {
-  background-color: var(--bg-base);
+    background-color: var(--bg-base);
 
-  &-content {
-    border-top: 1px solid var(--base-gray);
-    padding: 0 115px 36px 0;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-
-    & > .footer-list {
-      margin-top: 129px;
-    }
-  }
-
-  &__main-info {
-    font: 500 2rem var(--inter);
-    max-width: 243px;
-    width: 100%;
-    position: relative;
-    margin-top: 189px;
-  }
-
-  &__logo {
-    width: 151px;
-    position: absolute;
-    top: 60px;
-  }
-
-  &__tel, &__email {
-    margin-bottom: 22px;
-  }
-
-  &__address {
-    margin-bottom: 10px;
-  }
-
-  &__work-hours {
-    font: 400 1.6rem var(--inter);
-  }
-
-  &__socials {
-    position: absolute;
-    bottom: 0;
-
-    &-title {
-      text-transform: uppercase;
-      font: 600 1.4rem var(--inter);
-    }
-  }
-
-  &-list {
-    width: fit-content;
-    max-width: 232px;
-    font: 600 1.6rem var(--inter);
-    text-transform: uppercase;
-    color: hsla(193, 4%, 16%, .5);
-
-    & > & {
-      margin-top: 48px;
-    }
-
-    ul {
-      margin: 42px 0 0;
-      padding: 0;
-      list-style-type: none;
-      font: 400 1.8rem var(--inter);
-      text-transform: none;
-      color: var(--base-black);
-      display: flex;
-      flex-direction: column;
-      gap: 22px;
-    }
-  }
-
-  &-bottom {
-    border-top: 1px solid var(--base-gray);
-    padding-top: 16px;
-    display: flex;
-    justify-content: space-between;
-    font: 400 1.4rem var(--inter);
-    padding-bottom: 18px;
-
-    &__privacy {
-      display: flex;
-      flex-direction: column;
-    }
-
-    &__aaccent {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-    }
-  }
-}
-
-@media only screen and (max-width: utils.$tablet1000) {
-  .footer {
     &-content {
-      flex-wrap: wrap;
-      padding: 0 0 22px;
+        border-top: 1px solid var(--base-gray);
+        padding: 0 115px 36px 0;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
 
-      & > .footer-list {
-        margin-top: 32px;
-      }
-    }
-
-    &__logo {
-      margin-top: 22px;
-      position: initial;
-      width: 100%;
+        & > .footer-list {
+            margin-top: 129px;
+        }
     }
 
     &__main-info {
-      margin-top: 28px;
-      order: 6;
-      font-size: 1.6rem;
+        font: 500 2rem var(--inter);
+        max-width: 243px;
+        width: 100%;
+        position: relative;
+        margin-top: 189px;
+    }
+
+    &__logo {
+        width: 151px;
+        position: absolute;
+        top: 60px;
     }
 
     &__tel, &__email {
-      margin-bottom: 14px;
-    }
-
-    &__socials {
-      position: initial;
-      margin-top: 22px;
+        margin-bottom: 22px;
     }
 
     &__address {
-      margin-bottom: 4px;
+        margin-bottom: 10px;
     }
 
     &__work-hours {
-      font-size: 1.4rem;
+        font: 400 1.6rem var(--inter);
+    }
+
+    &__socials {
+        position: absolute;
+        bottom: 0;
+
+        &-title {
+            text-transform: uppercase;
+            font: 600 1.4rem var(--inter);
+        }
     }
 
     &-list {
-      max-width: 170px;
-      width: 100%;
-      font-size: 1.2rem;
+        width: fit-content;
+        max-width: 232px;
+        font: 600 1.6rem var(--inter);
+        text-transform: uppercase;
+        color: hsla(193, 4%, 16%, .5);
 
-      &:nth-child(4) {
-        order: 5;
-        margin-top: 0;
-      }
+        & > & {
+            margin-top: 48px;
+        }
 
-      &:nth-child(6) {
-        margin-top: 28px;
-      }
-
-      &:nth-child(6) {
-        order: 5;
-      }
-
-      ul {
-        font-size: 1.4rem;
-        margin-top: 16px;
-        gap: 12px;
-      }
+        ul {
+            margin: 42px 0 0;
+            padding: 0;
+            list-style-type: none;
+            font: 400 1.8rem var(--inter);
+            text-transform: none;
+            color: var(--base-black);
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
     }
 
     &-bottom {
-      flex-direction: column;
-      gap: 12px;
+        border-top: 1px solid var(--base-gray);
+        padding-top: 16px;
+        display: flex;
+        justify-content: space-between;
+        font: 400 1.4rem var(--inter);
+        padding-bottom: 18px;
+
+        &__privacy {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__aaccent {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
     }
-  }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .footer {
+        &-content {
+            flex-wrap: wrap;
+            padding: 0 0 22px;
+
+            & > .footer-list {
+                margin-top: 32px;
+            }
+        }
+
+        &__logo {
+            margin-top: 22px;
+            position: initial;
+            width: 100%;
+        }
+
+        &__main-info {
+            margin-top: 28px;
+            order: 6;
+            font-size: 1.6rem;
+        }
+
+        &__tel, &__email {
+            margin-bottom: 14px;
+        }
+
+        &__socials {
+            position: initial;
+            margin-top: 22px;
+        }
+
+        &__address {
+            margin-bottom: 4px;
+        }
+
+        &__work-hours {
+            font-size: 1.4rem;
+        }
+
+        &-list {
+            max-width: 170px;
+            width: 100%;
+            font-size: 1.2rem;
+
+            &:nth-child(4) {
+                order: 5;
+                margin-top: 0;
+            }
+
+            &:nth-child(6) {
+                margin-top: 28px;
+            }
+
+            &:nth-child(6) {
+                order: 5;
+            }
+
+            ul {
+                font-size: 1.4rem;
+                margin-top: 16px;
+                gap: 12px;
+            }
+        }
+
+        &-bottom {
+            flex-direction: column;
+            gap: 12px;
+        }
+    }
 }
