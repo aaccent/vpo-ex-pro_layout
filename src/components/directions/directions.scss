@@ -1,0 +1,85 @@
+@use "styles/utils";
+
+.directions {
+    &__title {
+        margin-bottom: 36px;
+        font: 600 1.6rem var(--inter);
+        text-transform: uppercase;
+        opacity: .8;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    &__item {
+        padding: 22px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font: 500 4.2rem var(--involve);
+        opacity: .6;
+        border-top: 1px solid var(--base-gray);
+        transition: padding-left .5s, padding-right .5s;
+
+        &-info {
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &-amount {
+            margin-left: 8px;
+            font: 500 1.6rem var(--inter);
+            vertical-align: super;
+        }
+
+        @include utils.hover {
+            padding: 22px 20px;
+            opacity: 1;
+            background-color: var(--yellow);
+            transition: padding-left .5s, padding-right .5s;
+
+            .directions__item-arrow {
+                opacity: 1;
+                border-color: hsla(0, 0%, 59%, 0.1);
+
+                &::after {
+                    transform: rotate(0);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .directions {
+        &__title {
+            margin-bottom: 4px;
+
+            font-size: 1.2rem;
+        }
+
+        &__item {
+            padding: 18px 0;
+            opacity: 1;
+
+            &-info {
+                width: 100%;
+            }
+
+            &-count, &-amount {
+                display: none;
+            }
+
+            &-name {
+                max-width: 290px;
+                font-size: 3rem;
+                line-height: 32px;
+            }
+        }
+    }
+}
