@@ -1,0 +1,146 @@
+@use "styles/utils";
+
+.spheres {
+    &__text {
+        font: 500 4.2rem/1.24 var(--involve);
+    }
+
+    &-list {
+        margin: 36px 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+
+    &__item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 12px;
+        border: 1px solid var(--base-black);
+
+        &::after {
+            content: "";
+            position: absolute;
+            background-color: hsla(0, 0%, 0%, 0.2);
+            inset: 0;
+        }
+
+        @include utils.hover {
+            .spheres__item-img {
+                opacity: 1;
+                visibility: visible;
+                transition: opacity .3s, visibility .3s;
+            }
+
+            .spheres__item-button {
+                border-color: var(--base-white);
+
+                &::after {
+                    transform: rotate(0);
+                    transition: transform .3s;
+                    filter: var(--filter-white);
+                }
+            }
+
+            .spheres__item-content {
+                color: var(--base-white);
+            }
+        }
+
+        &-img {
+            width: 100%;
+            height: 378px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .3s, visibility .3s;
+            object-position: center;
+            object-fit: cover;
+        }
+
+        &-content {
+            position: absolute;
+            z-index: 2;
+            bottom: 0;
+            left: 0;
+            padding: 26px 30px;
+            width: 100%;
+        }
+
+        &-count {
+            margin-bottom: 20px;
+            font: 600 1.6rem var(--inter);
+        }
+
+        &-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font: 500 2.6rem var(--inter);
+
+            p {
+                max-width: 278px;
+            }
+        }
+    }
+
+    &-button {
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .spheres {
+        &__title {
+            margin-bottom: 14px;
+            width: 100%;
+            font-size: 1.2rem;
+        }
+
+        &__text {
+            font-size: 3rem;
+        }
+
+        &-list {
+            margin: 22px 0 14px;
+            grid-template-columns: 1fr;
+            gap: 8px;
+        }
+
+        &__item {
+            height: 266px;
+            border-radius: 12px;
+            border: none;
+
+            &-img {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            &-content {
+                padding: 18px;
+                color: var(--base-white);
+            }
+
+            &-title {
+                font-size: 2.4rem;
+
+                p {
+                    max-width: 270px;
+                }
+            }
+
+            &-count {
+                margin-bottom: 12px;
+                font-size: 1.2rem;
+            }
+
+            &-button {
+                border-color: var(--base-white);
+
+                &::after {
+                    filter: var(--filter-white);
+                }
+            }
+        }
+    }
+}

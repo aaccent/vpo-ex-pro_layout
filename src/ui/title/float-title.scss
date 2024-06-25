@@ -1,0 +1,16 @@
+@use "styles/utils";
+
+.float-title {
+    float: left;
+    margin-top: 17px;
+    width: 40%;
+    display: inline-block;
+    font: 600 1.6rem var(--inter);
+    text-transform: uppercase;
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .float-title {
+        float: none;
+    }
+}

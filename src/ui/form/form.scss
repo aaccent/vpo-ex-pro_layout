@@ -1,0 +1,35 @@
+@use "styles/utils";
+
+.form {
+    .input + .input {
+        margin-top: 18px;
+    }
+
+    &__policy {
+        margin-top: 12px;
+        font-family: var(--inter);
+        font-size: 1.4rem;
+        line-height: 1.57;
+        opacity: 0.7;
+    }
+
+    &__button {
+        margin-top: 36px;
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .form {
+        .input + .input {
+            margin-top: 14px;
+        }
+
+        &__policy {
+            margin-top: 8px;
+        }
+
+        &__button {
+            margin-top: 22px;
+        }
+    }
+}
