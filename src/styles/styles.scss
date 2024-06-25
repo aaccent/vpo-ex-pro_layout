@@ -1,19 +1,21 @@
-@use 'general/_normalize.css';
-@use 'general/reset';
-@use 'general/variables';
-@use 'general/fonts';
-@use 'general/global';
+@use "general/_normalize.css";
+@use "general/reset";
+@use "general/variables";
+@use "general/fonts";
+@use "general/global";
 
 // Popup
-@use 'features/popup/popup';
+@use "features/popup/popup";
 
 // Ui
-@use 'ui/buttons/close-btn';
-@use 'ui/buttons/button';
-@use 'ui/input/input';
+@use "ui/buttons/close-btn";
+@use "ui/buttons/button";
+@use "ui/input/input";
 @use "ui/select/select";
-@use 'ui/arrow/arrow';
+@use "ui/arrow/arrow";
+@use "ui/title/float-title";
 
 // Page
-@use 'layout/header/header';
-@use 'layout/footer/footer';
+@use "layout/header/header";
+@use "layout/footer/footer";
+@use "components/spheres/spheres";
