@@ -1,2 +1,64 @@
+include layout/utils
+
+-
+    var footerInfo = [
+        {
+            list: [
+                'О нас',
+                'Контакты',
+                'Медиацентр',
+                'Реализованные проекты',
+                'Сферы применения',
+            ],
+            title: 'Навигация сайта'
+        },
+        {
+            list: Array(6),
+            title: 'Услуги'
+        },
+        {
+            list: Array(6),
+            title: 'Оборудование',
+            sublist: {
+                list: Array(3),
+                title: 'Оборудование в наличии'
+            }
+        }
+    ]
+
 footer.footer
     .container
+        .footer-content
+            .footer__logo: +anchor('/'): +img(require('assets/icons/logo.svg'))
+            .footer__main-info
+                .footer__tel: +anchor('tel:8 (976) 543 21 00') 8 (976) 543 21 00
+                .footer__email: +anchor('mailto:mail@example.com') mail@example.com
+                .footer__address Республика Татарстан, г. Казань, ул. Баумана, 1
+                .footer__work-hours Пн — Пт: с 08:00 до 20:00
+                .footer__socials
+                    .footer__socials-title следите за нами в соц сетях:
+                    include ui/socials/socials
+            each list in footerInfo
+                .footer-list
+                    .footer-list__title=list.title
+                    ul
+                        each item in list.list
+                            if item
+                                li.footer-list__item: +anchor=item
+                            else
+                                li.footer-list__item: +anchor='Название'
+                    if(list.sublist)
+                        .footer-list
+                            .footer-list__title=list.sublist.title
+                            ul
+                                each subitem in list.sublist.list
+                                    if subitem
+                                        li.footer-list__item: +anchor=subitem
+                                    else
+                                        li.footer-list__item: +anchor='Название'
+        .footer-bottom
+            .footer-bottom__privacy
+                span © 2000 - 2023 ООО «Название компании»
+                +anchor() Политика конфиденциальности и условия обработки персональных данных
+            .footer-bottom__aaccent Разработано:
+                +anchor('https://www.aaccent.ru/'): +img(require('assets/icons/aaccent.svg'))

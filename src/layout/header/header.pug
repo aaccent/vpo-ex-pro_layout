@@ -1,2 +1,37 @@
+include layout/utils
+
+-
+    var menu = [
+        'О нас',
+        'Оборудование',
+        'Оборудование в наличии',
+        'Реализованные проекты'
+    ]
+    var bottomMenu = [
+        'Сферы применения',
+        'Медиатека',
+        'Контакты'
+    ]
+
+
 header.header
+    .header-top
+        .container
+            include ui/select/select-lang
+            +anchor('tel:8 (976) 543 21 00').header__tel 8 (976) 543 21 00
     .container
+        .header-main
+            .header__logo-wrapper
+                +anchor('/'): +img(require('assets/icons/logo.svg')).header__logo
+                +wrapBreak: button.header__menu-button
+            .header__mobile-wrapper
+                nav.header__menu-wrapper: ul.header__menu
+                    each item in menu
+                        li.header__menu-item: +anchor=item
+                +popupBtn('call').button.button-header Получить консультацию
+        .header-bottom
+            include ui/select/select-mob
+            ul.header-bottom__menu
+                each item in bottomMenu
+                    li.header__menu-item.header-bottom__menu-item: +anchor=item
+

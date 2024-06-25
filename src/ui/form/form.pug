@@ -1,0 +1,8 @@
+form.form
+    +wrapBreak: input(placeholder="Ваше имя" name="name" required).input
+    +wrapBreak: input(placeholder="Номер телефона" name="tel" required).input
+    .form__policy
+        | Нажимая на кнопку "Отправить заявку” вы подтверждаете своё согласие с
+        +anchor политикой конфиденциальности
+        | сайта
+    +wrapBreak: button(type="submit").form__button.button.button-form.button-form--white Отправить заявку

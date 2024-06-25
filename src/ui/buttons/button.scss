@@ -1,24 +1,24 @@
 @use 'styles/utils';
 
 .button {
-  font: 500 1.8rem var(--inter);
+  padding: 14px;
   display: flex;
   justify-content: center;
-  gap: 12px;
   align-items: center;
-  border-radius: 4px;
+  font: 500 1.8rem var(--inter);
   text-align: center;
-  padding: 14px;
+  border-radius: 4px;
   border: 1px solid transparent;
+  gap: 12px;
 
   &:after {
     @include utils.bg-defaults(cover);
-    content: '';
-    display: block;
+    content: "";
+    transform: rotate(-45deg);
     width: 14px;
     height: 12px;
+    display: block;
     background-image: url("assets/icons/arrow.svg");
-    transform: rotate(-45deg);
   }
 
   &-header {
@@ -54,7 +54,7 @@
   }
 
   &-form {
-    width: 279px;
+    padding: 15.5px 48px;
 
     &--yellow {
       background-color: var(--yellow);
@@ -82,10 +82,11 @@
 @media only screen and (max-width: utils.$tablet1000) {
   .button {
     padding: 11.5px;
+    width: 100%;
     font-size: 1.4rem;
 
     &-white {
-      width: 190px;
+      width: 100%;
     }
 
     &-transparent {
@@ -93,7 +94,7 @@
     }
 
     &-form {
-      width: 237px;
+      padding: 12.5px 48px;
     }
   }
 }

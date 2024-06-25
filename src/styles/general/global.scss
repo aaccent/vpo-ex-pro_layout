@@ -6,6 +6,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: var(--bg-base);
+}
+
 .container {
   margin: 0 auto;
   padding: 0;
@@ -17,9 +21,12 @@ html {
 }
 
 .section {
+  margin: 150px 0;
   padding: 0 80px;
   background-color: var(--bg-base);
+
   @media only screen and (max-width: utils.$tablet1000) {
+    margin: 70px 0;
     padding: 0 20px;
   }
 }
