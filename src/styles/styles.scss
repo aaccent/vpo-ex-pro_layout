@@ -1,23 +1,25 @@
-@use 'general/_normalize.css';
-@use 'general/reset';
-@use 'general/variables';
-@use 'general/fonts';
-@use 'general/global';
+@use "general/_normalize.css";
+@use "general/reset";
+@use "general/variables";
+@use "general/fonts";
+@use "general/global";
 
 // Popup
-@use 'features/popup/popup';
+@use "features/popup/popup";
 
 // Ui
-@use 'ui/buttons/close-btn';
-@use 'ui/buttons/button';
-@use 'ui/input/input';
+@use "ui/buttons/close-btn";
+@use "ui/buttons/button";
+@use "ui/input/input";
 @use "ui/select/select";
-@use 'ui/arrow/arrow';
+@use "ui/arrow/arrow";
 @use "ui/socials/socials";
+@use "ui/form/form";
 
 // Components
-@use 'components/page-hero/page-hero';
+@use "components/page-hero/page-hero";
+@use "components/form-section/form-section";
 
 // Page
-@use 'layout/header/header';
-@use 'layout/footer/footer';
+@use "layout/header/header";
+@use "layout/footer/footer";
