@@ -1,0 +1,25 @@
+include layout/utils
+
+-
+  var socials = [
+    {
+      name: 'telegram',
+      icon: require('assets/icons/telegram.svg')
+    },
+    {
+      name: 'whatsapp',
+      icon: require('assets/icons/whatsapp.svg')
+    },
+    {
+      name: 'youtube',
+      icon: require('assets/icons/youtube.svg')
+    },
+    {
+      name: 'vk',
+      icon: require('assets/icons/vk.svg')
+    },
+  ]
+ul.socials
+  each item in socials
+    +anchor(class=`social__item-${item.name}`).socials__item
+      +img(item.icon)
