@@ -15,6 +15,9 @@
 @use 'ui/arrow/arrow';
 @use "ui/socials/socials";
 
+// Components
+@use 'components/page-hero/page-hero';
+
 // Page
 @use 'layout/header/header';
 @use 'layout/footer/footer';
