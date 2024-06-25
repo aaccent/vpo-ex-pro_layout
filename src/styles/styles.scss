@@ -16,12 +16,14 @@
 @use "ui/arrow/arrow";
 @use "ui/socials/socials";
 @use "ui/form/form";
+@use "ui/card/card";
 
 // Components
 @use "components/page-hero/page-hero";
 @use "components/form-section/form-section";
 @use "components/spheres/spheres";
 @use "components/content/content";
+@use "components/projects/projects";
 
 // Page
 @use "layout/header/header";

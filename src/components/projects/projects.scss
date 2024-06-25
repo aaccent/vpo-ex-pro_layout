@@ -1,0 +1,32 @@
+@use "styles/utils";
+
+.projects {
+    &-title {
+        margin-bottom: 36px;
+        font: 500 4.2rem var(--involve);
+    }
+
+    &-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+
+    &-button {
+        margin: 36px auto 0;
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .projects {
+        &-title {
+            margin-bottom: 22px;
+            font-size: 3.2rem;
+            line-height: 32px;
+        }
+
+        &-list {
+            grid-template-columns: 1fr;
+        }
+    }
+}
