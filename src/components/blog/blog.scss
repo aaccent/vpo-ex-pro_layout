@@ -1,0 +1,33 @@
+@use "styles/utils";
+
+.blog {
+  &__title {
+    text-transform: uppercase;
+    font: 600 1.6rem var(--inter);
+    margin-bottom: 36px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    gap: 18px;
+  }
+
+  &__btn {
+    margin: 36px auto 0;
+  }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+  .blog {
+    &__title {
+      font-size: 1.2rem;
+      margin-bottom: 22px;
+    }
+    &__list {
+      flex-direction: column;
+    }
+  }
+}
