@@ -1,0 +1,145 @@
+@use 'styles/utils';
+@use "node_modules/swiper/swiper";
+@use "node_modules/swiper/modules/navigation";
+
+.reviews {
+  &__title {
+    text-transform: uppercase;
+    font: 600 1.6rem var(--inter);
+    margin-bottom: 14px;
+  }
+
+  &__subtitle {
+    font: 500 4.2rem var(--involve);
+    margin-bottom: 36px;
+  }
+
+  &__item {
+    background-color: var(--base-white);
+    border-radius: 12px;
+    padding: 24px;
+
+    &-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    &-img {
+      @include utils.circle(58px);
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &-name {
+      font: 500 1.8rem var(--inter);
+      margin-bottom: 6px;
+    }
+
+    &__stars {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+
+      .star {
+        @include utils.bg-defaults();
+        background-image: url("assets/icons/star.svg");
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    &-date {
+      font: 500 1.4rem var(--inter);
+      opacity: .7;
+    }
+
+    &-description {
+      font: 400 1.8rem var(--inter);
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 6;
+      overflow: hidden;
+
+      &._full {
+        -webkit-line-clamp: initial;
+      }
+    }
+
+    &-btn {
+      font: 500 1.8rem var(--inter);
+      text-decoration: underline;
+      margin-top: 22px;
+    }
+  }
+
+  &__navigation-btns {
+    align-self: end;
+    margin-bottom: 36px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    top: -90px;
+  }
+
+  &__navigation-btns {
+    right: 0;
+    top: -90px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+  }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+  .reviews {
+    &__title {
+      font-size: 1.2rem;
+      margin-bottom: 14px;
+    }
+
+    &__subtitle {
+      font-size: 3rem;
+      line-height: 32px;
+      margin-bottom: 22px;
+    }
+
+    &__list {
+      top: initial;
+    }
+
+    &__item {
+      padding: 18px;
+
+      &-img {
+        @include utils.circle(46px);
+      }
+
+      &-name {
+        font-size: 1.6rem;
+        margin-bottom: 4px;
+      }
+
+      &__stars-item {
+        width: 16px;
+        height: 16px;
+      }
+
+      &-description, &-btn {
+        font-size: 1.4rem;
+        -webkit-line-clamp: 7;
+      }
+
+      &-btn {
+        font-size: 1.4rem;
+      }
+    }
+
+    &__navigation-btns {
+      display: none;
+    }
+  }
+}

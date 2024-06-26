@@ -1,0 +1,20 @@
+include layout/utils
+
++section.reviews
+    h2.reviews__title Отзывы
+    .reviews__subtitle Честное мнение клиентов о нас
+    .reviews__list.swiper
+        .reviews__navigation-btns
+            .arrow.arrow--prev
+            .arrow
+        .swiper-wrapper
+            each _ in Array(5)
+                .reviews__item.swiper-slide
+                    .reviews__item-header
+                        +img(require('assets/content/review-img.jpg?as=webp')).reviews__item-img
+                        .reviews__item-info
+                            .reviews__item-name Наталия Е
+                            .reviews__item__stars(data-stars="4.8")
+                            .reviews__item-date 20 мая 2024
+                    .reviews__item-description В частности, сложившаяся структура организации не оставляет шанса для системы обучения кадров, соответствующей насущным потребностям. Противоположная точка зрения подразумевает, что непосредственные участники технического прогресса, которые представляют собой яркий пример континентально-европейского типа политической культуры
+                    button.reviews__item-btn(data-more-text='Читать полностью' data-close-text='Скрыть') Читать полностью

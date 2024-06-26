@@ -7,7 +7,17 @@ html {
 }
 
 body {
+    overflow-x: clip;
+    color: var(--base-black);
+    font-family: var(--inter);
+    font-size: 1.8rem;
+    line-height: 1.33;
     background-color: var(--bg-base);
+
+    @media only screen and (max-width: utils.$tablet1000) {
+        font-size: 1.4rem;
+        line-height: 1.43;
+    }
 }
 
 .container {
@@ -49,13 +59,6 @@ body {
 
 .hidden {
     display: none;
-}
-
-body {
-    overflow-x: clip;
-    color: var(--base-black);
-    font-family: var(--inter);
-    font-size: 1.8rem;
 }
 
 html.disable-scroll {

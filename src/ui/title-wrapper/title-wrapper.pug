@@ -1,0 +1,10 @@
+mixin title-wrapper(props)
+    -
+        props = Object.assign({
+            subtitle: '',
+            title: '',
+        }, props || {})
+
+    .title-wrapper
+        span.title-wrapper__subtitle=props.subtitle
+        h2.title-wrapper__title=props.title
