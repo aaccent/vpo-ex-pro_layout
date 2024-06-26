@@ -1,5 +1,3 @@
-@use "node_modules/swiper/swiper";
-@use "node_modules/swiper/modules/pagination";
 @use "styles/utils";
 
 .benefits {
@@ -36,27 +34,11 @@
         }
     }
 
-    &__progress {
-        position: relative;
+    .progressbar {
         margin-top: 64px;
-        width: 100%;
-        height: 2px;
-        background-color: var(--base-gray);
-        --progress: 40%;
-
-        &::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: var(--progress);
-            height: 100%;
-            background-color: var(--base-black);
-            @include utils.transition(width);
-        }
     }
 
-    .swiper-pagination {
+    .swiper-progressbar {
         display: none;
     }
 }
@@ -72,7 +54,7 @@
             margin-bottom: 22px;
         }
 
-        &__progress {
+        .progressbar {
             display: none;
         }
 
@@ -100,16 +82,8 @@
             }
         }
 
-        .swiper-pagination {
-            display: block;
-            position: relative;
+        .swiper-progressbar {
             margin-top: 14px;
-            height: 2px;
-            background-color: var(--base-gray);
-
-            .swiper-pagination-progressbar-fill {
-                background-color: var(--base-black);
-            }
         }
     }
 }
