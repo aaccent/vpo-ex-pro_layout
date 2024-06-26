@@ -4,13 +4,13 @@
     margin-bottom: 28px;
 
     &-top {
-        background-color: hsla(43, 5%, 84%, 1);
         margin-bottom: 12px;
+        background-color: hsla(43, 5%, 84%, 1);
 
         .container {
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
         }
     }
 
@@ -19,34 +19,34 @@
     }
 
     &-main {
-        display: flex;
-        gap: 46px;
-        align-items: center;
         margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 46px;
     }
 
     &__logo {
         &-wrapper {
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
         }
     }
 
     &__mobile-wrapper {
+        width: 100%;
         display: flex;
         align-items: center;
-        width: 100%;
     }
 
     &__menu {
-        list-style-type: none;
         margin: 0;
         padding: 0;
         display: flex;
         align-items: center;
-        gap: 46px;
         font: 500 1.8rem var(--inter);
+        list-style-type: none;
+        gap: 46px;
     }
 
     .button-header {
@@ -54,35 +54,35 @@
     }
 
     &-bottom {
-        border-top: 1px solid var(--base-gray);
         padding-top: 14px;
+        border-top: 1px solid var(--base-gray);
 
         &__menu {
-            list-style-type: none;
             margin: 0;
             padding: 0;
             display: flex;
             align-items: center;
-            gap: 46px;
             font: 500 1.6rem var(--inter);
             opacity: .6;
+            list-style-type: none;
+            gap: 46px;
         }
     }
 }
 
 @media only screen and (max-width: utils.$tablet1000) {
     .header {
+        z-index: 3;
         margin-bottom: 0;
         width: 100%;
         background-color: var(--bg-base);
-        z-index: 3;
 
         &--menu-opened {
             position: fixed;
 
             .header__mobile-wrapper {
-                visibility: visible;
                 opacity: 1;
+                visibility: visible;
                 transition: visibility .3s, opacity .3s;
             }
 
@@ -98,8 +98,8 @@
         }
 
         .button-header {
-            margin-left: 0;
             margin-top: auto;
+            margin-left: 0;
         }
 
         &__logo-wrapper {
@@ -108,15 +108,15 @@
         }
 
         &__mobile-wrapper {
-            flex-direction: column;
             position: fixed;
-            padding: 0 20px 36px;
+            z-index: 2;
             top: 100px;
             bottom: 0;
-            z-index: 2;
-            background-color: var(--bg-base);
-            visibility: hidden;
+            padding: 0 20px 36px;
+            flex-direction: column;
             opacity: 0;
+            visibility: hidden;
+            background-color: var(--bg-base);
             transition: visibility .3s, opacity .3s;
         }
 
@@ -125,27 +125,27 @@
         }
 
         &-main {
-            flex-direction: column;
             position: relative;
             margin-bottom: 0;
+            flex-direction: column;
             gap: 0;
         }
 
         &__menu {
             flex-direction: column;
             align-items: flex-start;
-            gap: 12px;
-            font-weight: 400;
             font-size: 1.6rem;
+            font-weight: 400;
+            gap: 12px;
 
             &-item {
+                padding-bottom: 12px;
                 width: 100%;
                 border-bottom: 1px solid var(--base-gray);
-                padding-bottom: 12px;
 
                 &:first-child {
-                    border-top: 1px solid var(--base-gray);
                     padding-top: 12px;
+                    border-top: 1px solid var(--base-gray);
                 }
             }
 
@@ -157,10 +157,10 @@
                 &::after {
                     @include utils.bg-defaults();
                     content: "";
-                    background-image: url("assets/icons/menu-burger.svg");
-                    display: block;
                     width: 32px;
                     height: 20px;
+                    display: block;
+                    background-image: url("assets/icons/menu-burger.svg");
                 }
             }
         }
