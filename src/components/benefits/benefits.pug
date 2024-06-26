@@ -41,8 +41,8 @@ include ui/info-card/info-card
                 | Подтекст, если уловить хореический ритм или аллитерацию на "р",
                 | иллюстрирует культурный размер. Голос персонажа
         .progressbar
-    ul.benefits__list-wrapper.swiper
-        .swiper-wrapper.benefits__list
+    .benefits__list-wrapper.swiper
+        ul.swiper-wrapper.benefits__list
             each item, i in items
-                li.swiper-slide: +info-card({ ...item, num: i + 1 })
+                +info-card({ ...item, num: i + 1 }).swiper-slide
         .swiper-pagination.swiper-progressbar
