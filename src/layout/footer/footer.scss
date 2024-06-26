@@ -54,9 +54,9 @@
     &-list {
         width: fit-content;
         max-width: 232px;
+        color: hsla(193, 4%, 16%, .5);
         font: 600 1.6rem var(--inter);
         text-transform: uppercase;
-        color: hsla(193, 4%, 16%, .5);
 
         & > & {
             margin-top: 48px;
@@ -72,6 +72,10 @@
             display: flex;
             flex-direction: column;
             gap: 22px;
+        }
+
+        &__title {
+            width: max-content;
         }
     }
 

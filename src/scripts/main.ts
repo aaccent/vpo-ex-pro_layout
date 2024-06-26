@@ -1,7 +1,8 @@
 import 'layout/header/header.js'
+import 'layout/footer/footer.js'
 
-import '@/features/popup/popup'
+import 'components/map-form/map-form.js'
+
+import 'features/popup/popup'
 
 import 'ui/select/select.js'
-
-import 'layout//footer/footer.js'

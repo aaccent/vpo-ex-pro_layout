@@ -21,9 +21,12 @@ body {
 }
 
 .section {
+  margin: 150px 0;
   padding: 0 80px;
   background-color: var(--bg-base);
+
   @media only screen and (max-width: utils.$tablet1000) {
+    margin: 70px 0;
     padding: 0 20px;
   }
 }
@@ -46,6 +49,9 @@ body {
 
 body {
   overflow-x: clip;
+  color: var(--base-black);
+  font-family: var(--inter);
+  font-size: 1.8rem;
 }
 
 html.disable-scroll {

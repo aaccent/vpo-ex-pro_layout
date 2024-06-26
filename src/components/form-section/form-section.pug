@@ -1,0 +1,26 @@
+include layout/utils
+
+mixin form-section(props)
+    -
+        props = Object.assign({
+            variation: 'light',
+        }, props || {})
+
+        switch (props.variation) {
+            case 'black':
+                var className = 'form-section form-section--black'
+                break
+            case 'light':
+                var className = 'form-section'
+                break
+            default:
+                var className = 'form-section'
+        }
+
+    +sectionBlock(class=className)
+        h2.form-section__title
+            | Вы можете задать любой интересующий вас вопрос и
+            | наши менеджеры проведут бесплатную консультацию
+        .form-section__inner
+            .form-section__text Ваша контактная информация
+            include ui/form/form

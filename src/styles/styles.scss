@@ -1,24 +1,30 @@
-@use 'general/_normalize.css';
-@use 'general/reset';
-@use 'general/variables';
-@use 'general/fonts';
-@use 'general/global';
-
-// Popup
-@use 'features/popup/popup';
-
-// Ui
-@use 'ui/buttons/close-btn';
-@use 'ui/buttons/button';
-@use 'ui/input/input';
-@use "ui/select/select";
-@use 'ui/arrow/arrow';
-@use "ui/socials/socials";
-
-// Components
-@use 'components/page-hero/page-hero';
-@use "components/directions/directions";
+@use "general/_normalize.css";
+@use "general/reset";
+@use "general/variables";
+@use "general/fonts";
+@use "general/global";
 
 // Page
-@use 'layout/header/header';
-@use 'layout/footer/footer';
+@use "layout/header/header";
+@use "layout/footer/footer";
+
+// Popup
+@use "features/popup/popup";
+
+// Ui
+@use "ui/buttons/close-btn";
+@use "ui/buttons/button";
+@use "ui/input/input";
+@use "ui/select/select";
+@use "ui/title/float-title";
+@use "ui/arrow/arrow";
+@use "ui/socials/socials";
+@use "ui/form/form";
+
+// Components
+@use "components/page-hero/page-hero";
+@use "components/form-section/form-section";
+@use "components/spheres/spheres";
+@use "components/content/content";
+@use "components/map-form/map-form";
+@use "components/directions/directions";
