@@ -1,0 +1,19 @@
+include layout/utils
+
+mixin info-card(props)
+    -
+        props = Object.assign({
+            num: 1,
+            title: '',
+            text: '',
+            active: false,
+        }, props || {})
+
+        var className = props.active ? 'info-card info-card--active' : 'info-card'
+
+    div(class=className)
+        - var num = props.num < 10 ? `0${props.num}` : props.num
+        .info-card__num=num
+        .info-card__title=props.title
+        if props.text
+            .info-card__text!=props.text

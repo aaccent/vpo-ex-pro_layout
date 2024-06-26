@@ -1,0 +1,48 @@
+include layout/utils
+include ui/title-wrapper/title-wrapper
+include ui/info-card/info-card
+
+-
+    var items = [
+        {
+            title: 'На рынке с 2017 года',
+            text: '',
+        },
+        {
+            title: 'Свое конструкторское бюро',
+            text: 'В любой карточке преимущества можно добавить подробное описание, или условие на ту же гарантию',
+        },
+        {
+            title: 'Работаем при низких температурах ',
+            text: '',
+            active: true,
+        },
+        {
+            title: 'lorem ipsum',
+            text: '',
+        },
+        {
+            title: 'dolores sit amet',
+            text: 'equaling du respect from pa',
+        },
+    ]
+
++section.benefits
+    .benefits__content
+        +title-wrapper({ title: 'Почему выбирают нас', subtitle: 'Преимущества' })
+        .benefits__text
+            p
+                | Жирмунский, однако, настаивал, что синхрония доступна.
+                | Анжамбеман семантически отражает хорей.
+                | Представленный лексико-семантический анализ является
+                | психолингвистическим в своей основе, но графомания возможна.
+
+            p
+                | Подтекст, если уловить хореический ритм или аллитерацию на "р",
+                | иллюстрирует культурный размер. Голос персонажа
+        .benefits__progress
+    ul.benefits__list-wrapper.swiper
+        .swiper-wrapper.benefits__list
+            each item, i in items
+                li.swiper-slide: +info-card({ ...item, num: i + 1 })
+        .swiper-pagination
