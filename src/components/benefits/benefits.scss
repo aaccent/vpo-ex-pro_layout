@@ -1,0 +1,115 @@
+@use "node_modules/swiper/swiper";
+@use "node_modules/swiper/modules/pagination";
+@use "styles/utils";
+
+.benefits {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+    }
+
+    .title-wrapper {
+        margin-bottom: 36px;
+    }
+
+    &__content {
+        width: 100%;
+        max-width: 590px;
+    }
+
+    &__list-wrapper {
+        @include utils.clear-list;
+    }
+
+    &__list {
+        width: 100%;
+        max-width: 590px;
+        height: calc(100vh - 80px);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        gap: 16px;
+
+        .swiper-slide {
+            height: fit-content;
+        }
+    }
+
+    &__progress {
+        position: relative;
+        margin-top: 64px;
+        width: 100%;
+        height: 2px;
+        background-color: var(--base-gray);
+        --progress: 40%;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: var(--progress);
+            height: 100%;
+            background-color: var(--base-black);
+            @include utils.transition(width);
+        }
+    }
+
+    .swiper-pagination {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .benefits {
+        .container {
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .title-wrapper {
+            margin-bottom: 22px;
+        }
+
+        &__progress {
+            display: none;
+        }
+
+        &__list-wrapper {
+            margin: 0 -20px;
+            padding: 0 20px;
+        }
+
+        &__list {
+            max-width: initial;
+            min-height: 190px;
+            height: initial;
+            display: flex;
+            flex-direction: row;
+            overflow: initial;
+            gap: 0;
+
+            .swiper-slide {
+                height: auto;
+            }
+
+            .info-card {
+                height: 100%;
+                min-height: initial;
+            }
+        }
+
+        .swiper-pagination {
+            display: block;
+            position: relative;
+            margin-top: 14px;
+            height: 2px;
+            background-color: var(--base-gray);
+
+            .swiper-pagination-progressbar-fill {
+                background-color: var(--base-black);
+            }
+        }
+    }
+}

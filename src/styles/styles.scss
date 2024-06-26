@@ -20,6 +20,8 @@
 @use "ui/arrow/arrow";
 @use "ui/socials/socials";
 @use "ui/form/form";
+@use "ui/title-wrapper/title-wrapper";
+@use "ui/info-card/info-card";
 
 // Components
 @use "components/page-hero/page-hero";
@@ -28,3 +30,4 @@
 @use "components/content/content";
 @use "components/map-form/map-form";
 @use "components/directions/directions";
+@use "components/benefits/benefits";
