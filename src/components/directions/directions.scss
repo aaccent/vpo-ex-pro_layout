@@ -9,6 +9,7 @@
     }
 
     &__list {
+        @include utils.reset-list;
         display: flex;
         flex-direction: column;
         gap: 0;

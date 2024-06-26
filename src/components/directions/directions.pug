@@ -1,10 +1,10 @@
 include layout/utils
 
 +section.directions
-    .directions__title Направления каталога
-    .directions__list
+    h2.directions__title Направления каталога
+    ul.directions__list
         each _, index in Array(6)
-            +anchor.directions__item
+            li: +anchor.directions__item
                 .directions__item-count=`0${index + 1}`
                 .directions__item-info
                     .directions__item-name Направление каталога
