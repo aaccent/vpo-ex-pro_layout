@@ -67,10 +67,12 @@
     .card {
         &-img {
             height: 227px;
+            margin-bottom: 10px;
         }
 
         &-title {
             font-size: 2.2rem;
+            margin-bottom: 6px;
         }
 
         &-description {
@@ -79,6 +81,7 @@
 
         &-tag {
             font-size: 1.2rem;
+            margin-bottom: 10px;
         }
     }
 }

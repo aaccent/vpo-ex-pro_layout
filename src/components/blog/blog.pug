@@ -1,0 +1,30 @@
+include layout/utils
+include ui/card/card
+
+-
+    var blog = [
+      {
+          img: require('assets/content/project1.jpg?as=webp'),
+          tag: 'info',
+          title: 'Название новости',
+          description: 'Описание проекта, которое умещается в 3 строки и раскрывает всю основную суть кейса, мотивируя кликнуть на блок'
+      },{
+          img: require('assets/content/project2.jpg?as=webp'),
+          tag: 'news',
+          title: 'Название новости',
+          description: 'Описание проекта, которое умещается в 3 строки и раскрывает всю основную суть кейса, мотивируя кликнуть на блок'
+      },{
+          img: require('assets/content/project3.jpg?as=webp'),
+          tag: 'news',
+          title: 'Название новости',
+          description: 'Описание проекта, которое умещается в 3 строки и раскрывает всю основную суть кейса, мотивируя кликнуть на блок'
+      },
+    ]
+
+
++section.blog
+  .blog__title Медиацентр
+  ul.blog__list
+    each item in blog
+        +card(item)
+  +anchor.blog__btn.button.button-transparent Смотреть все новости
