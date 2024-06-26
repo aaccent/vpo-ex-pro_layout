@@ -5,17 +5,19 @@ mixin card(props)
         props = Object.assign({
             img: '',
             title: '',
-            description: ''
+            description: '',
+            tag: null
         }, props || {})
-    +anchor.card
-        .card-img
-            +img(props.img)
-            .card-arrow.arrow.arrow-animated.arrow-animated--yellow
-        if props.tag === 'Полезная информация'
-            .card-tag.card-tag--yellow=props.tag
-        else if props.tag === 'Новости'
-            .card-tag=props.tag
-        else if props.tag === 'Команда'
-            .card-tag.card-tag--black=props.tag
-        .card-title=props.title
-        .card-description=props.description
+    li
+        +anchor.card
+            .card-img
+                +img(props.img)
+                .card-arrow.arrow.arrow-animated.arrow-animated--yellow
+            if props.tag
+                case (props.tag)
+                    when "info": .card-tag.card-tag--yellow Полезная информация
+                    when "team": .card-tag.card-tag--black Команда
+                    when "news": .card-tag Новости
+                    default: .card-tag Новости
+            .card-title=props.title
+            .card-description=props.description
