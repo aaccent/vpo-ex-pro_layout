@@ -1,0 +1,46 @@
+@use "styles/utils";
+
+.seo {
+  &__title {
+    font: 500 4.2rem var(--involve);
+    margin-bottom: 36px;
+  }
+
+  &__content {
+    font: 400 1.8rem var(--inter);
+    width: 100%;
+    max-width: 954px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+
+    &._full {
+      -webkit-line-clamp: initial;
+    }
+  }
+
+  &__btn {
+    text-decoration: underline;
+    font-weight: 500;
+    margin-top: 28px;
+  }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+  .seo {
+    &__title {
+      font-size: 3rem;
+      margin-bottom: 22px;
+    }
+
+    &__content {
+      font-size: 1.4rem;
+    }
+
+    &__btn {
+      font-size: 1.4rem;
+      margin-top: 14px;
+    }
+  }
+}
