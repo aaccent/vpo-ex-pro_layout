@@ -4,6 +4,10 @@
 @use "general/fonts";
 @use "general/global";
 
+// Page
+@use "layout/header/header";
+@use "layout/footer/footer";
+
 // Popup
 @use "features/popup/popup";
 
@@ -23,7 +27,4 @@
 @use "components/spheres/spheres";
 @use "components/content/content";
 @use "components/map-form/map-form";
-
-// Page
-@use "layout/header/header";
-@use "layout/footer/footer";
+@use "components/directions/directions";
