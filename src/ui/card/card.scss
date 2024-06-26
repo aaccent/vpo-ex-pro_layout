@@ -1,0 +1,84 @@
+@use "styles/utils";
+
+.card {
+    width: 100%;
+    max-width: 468px;
+    display: block;
+
+    &-img {
+        position: relative;
+        margin-bottom: 14px;
+        height: 297px;
+        overflow: hidden;
+        border-radius: 12px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-position: center;
+            object-fit: cover;
+        }
+    }
+
+    &-arrow {
+        position: absolute;
+        right: 30px;
+        bottom: 30px;
+        display: none;
+    }
+
+    &-tag {
+        margin-bottom: 14px;
+        padding: 8px 12px;
+        width: fit-content;
+        color: var(--base-black);
+        font: 500 1.4rem var(--inter);
+        background-color: var(--base-white);
+        border-radius: 4px;
+
+        &--yellow {
+            background-color: var(--yellow);
+        }
+
+        &--black {
+            color: var(--base-white);
+            background-color: var(--base-black);
+        }
+    }
+
+    &-title {
+        margin-bottom: 12px;
+        font: 500 2.6rem var(--inter);
+    }
+
+    &-description {
+        font: 400 1.8rem var(--inter);
+        opacity: .8;
+    }
+
+    @include utils.hover {
+        .card-arrow {
+            display: flex;
+        }
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .card {
+        &-img {
+            height: 227px;
+        }
+
+        &-title {
+            font-size: 2.2rem;
+        }
+
+        &-description {
+            font-size: 1.4rem;
+        }
+
+        &-tag {
+            font-size: 1.2rem;
+        }
+    }
+}

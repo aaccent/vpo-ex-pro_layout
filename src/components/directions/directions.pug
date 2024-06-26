@@ -1,0 +1,13 @@
+include layout/utils
+
++section.directions
+    h2.directions__title Направления каталога
+    ul.directions__list
+        each _, index in Array(6)
+            li: +anchor.directions__item
+                .directions__item-count=`0${index + 1}`
+                .directions__item-info
+                    .directions__item-name Направление каталога
+                        span.directions__item-amount [20]
+                    .arrow.arrow-animated.directions__item-arrow
+

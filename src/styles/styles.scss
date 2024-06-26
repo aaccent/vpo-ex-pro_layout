@@ -4,6 +4,10 @@
 @use "general/fonts";
 @use "general/global";
 
+// Page
+@use "layout/header/header";
+@use "layout/footer/footer";
+
 // Popup
 @use "features/popup/popup";
 
@@ -16,14 +20,17 @@
 @use "ui/arrow/arrow";
 @use "ui/socials/socials";
 @use "ui/form/form";
+@use "ui/title-wrapper/title-wrapper";
+@use "ui/info-card/info-card";
+@use "ui/card/card";
 
 // Components
 @use "components/page-hero/page-hero";
 @use "components/form-section/form-section";
 @use "components/spheres/spheres";
 @use "components/content/content";
+@use "components/map-form/map-form";
+@use "components/directions/directions";
+@use "components/benefits/benefits";
+@use "components/projects/projects";
 @use "components/reviews/reviews";
-
-// Page
-@use "layout/header/header";
-@use "layout/footer/footer";
