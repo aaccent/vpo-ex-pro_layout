@@ -1,0 +1,26 @@
+include layout/utils
+include ui/card/card
+-
+    var projects = [
+        {
+            img: require('assets/content/project1.jpg'),
+            title: 'Название проекта',
+            description: 'Описание проекта, которое умещается в 3 строки и раскрывает всю основную суть кейса, мотивируя кликнуть на блок',
+        }, {
+            img: require('assets/content/project2.jpg'),
+            title: 'Название проекта',
+            description: 'Описание проекта, которое умещается в 3 строки и раскрывает всю основную суть кейса, мотивируя кликнуть на блок',
+        }, {
+            img: require('assets/content/project3.jpg'),
+            title: 'Название проекта',
+            description: 'Описание проекта, которое умещается в 3 строки и раскрывает всю основную суть кейса, мотивируя кликнуть на блок',
+        },
+    ]
+
+
++section.projects
+    h2.projects-title Реализованные проекты
+    ul.projects-list
+        each item in projects
+            +card(item)
+    +anchor.projects-button.button.button-transparent Смотреть все проекты

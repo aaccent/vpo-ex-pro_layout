@@ -1,0 +1,23 @@
+include layout/utils
+
+mixin card(props)
+    -
+        props = Object.assign({
+            img: '',
+            title: '',
+            description: '',
+            tag: null
+        }, props || {})
+    li
+        +anchor.card
+            .card-img
+                +img(props.img)
+                .card-arrow.arrow.arrow-animated.arrow-animated--yellow
+            if props.tag
+                case (props.tag)
+                    when "info": .card-tag.card-tag--yellow Полезная информация
+                    when "team": .card-tag.card-tag--black Команда
+                    when "news": .card-tag Новости
+                    default: .card-tag Новости
+            .card-title=props.title
+            .card-description=props.description
