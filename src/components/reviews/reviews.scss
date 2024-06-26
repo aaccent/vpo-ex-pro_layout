@@ -42,7 +42,7 @@
       align-items: center;
       gap: 2px;
 
-      &-item {
+      .star {
         @include utils.bg-defaults();
         background-image: url("assets/icons/star.svg");
         width: 20px;

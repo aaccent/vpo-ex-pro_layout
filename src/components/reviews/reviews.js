@@ -21,21 +21,12 @@ new Swiper('.reviews__list.swiper', {
 void function () {
     const readMore = document.querySelectorAll('.reviews__item-btn')
 
-    if (!readMore.length) return
-
     readMore.forEach(btn => {
         btn.addEventListener('click', () => {
-            const text = btn.textContent
-            const readMore = 'Читать полностью'
-            const close = 'Скрыть'
-
-            if (text === readMore) {
-                btn.textContent = close
-            } else {
-                btn.textContent = readMore
-            }
             const description = btn.closest('.reviews__item').querySelector('.reviews__item-description')
             description.classList.toggle('_full')
+            const isActive = description.classList.contains('_full')
+            btn.textContent = isActive ? btn.dataset.closeText : btn.dataset.moreText
         })
     })
 }()
@@ -43,14 +34,14 @@ void function () {
 void function () {
     const rate = document.querySelectorAll('.reviews__item__stars')
     if (!rate.length) return
-    rate.forEach(item => addStarts(item))
+    rate.forEach(item => addStars(item))
 }()
 
-function addStarts(element) {
+function addStars(element) {
     const starsCount = Math.round(Number(element.dataset.stars))
     for (let i = 0; i < starsCount; i++) {
         const star = document.createElement('div')
-        star.classList.add('reviews__item__stars-item')
+        star.classList.add('star')
         element.append(star)
     }
 }
