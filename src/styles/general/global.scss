@@ -49,6 +49,9 @@ body {
 
 body {
   overflow-x: clip;
+  color: var(--base-black);
+  font-family: var(--inter);
+  font-size: 1.8rem;
 }
 
 html.disable-scroll {
