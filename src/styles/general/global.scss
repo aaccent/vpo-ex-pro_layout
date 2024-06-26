@@ -20,6 +20,10 @@ body {
   }
 }
 
+.main .section:first-child {
+  margin-top: 0;
+}
+
 .section {
   margin: 150px 0;
   padding: 0 80px;

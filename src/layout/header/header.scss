@@ -1,6 +1,8 @@
 @use "styles/utils";
 
 .header {
+    margin-bottom: 28px;
+
     &-top {
         background-color: hsla(43, 5%, 84%, 1);
         margin-bottom: 12px;
@@ -70,6 +72,7 @@
 
 @media only screen and (max-width: utils.$tablet1000) {
     .header {
+        margin-bottom: 0;
         width: 100%;
         background-color: var(--bg-base);
         z-index: 3;
