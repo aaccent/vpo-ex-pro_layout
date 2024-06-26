@@ -4,13 +4,17 @@ append head
     link(href=require('./styles.scss') rel="stylesheet")
 
 append main
+    include components/form-section/form-section
     include components/page-hero/page-hero
     +pageHero({
         title: 'Уникальное торговое предложение в две строки',
         img: require('assets/content/page-hero-banner.jpg?as=webp')
     })
     include components/directions/directions
+    include components/spheres/spheres
+    +form-section({ variation: 'black' })
     include components/content/content
+    +form-section({ variation: 'light' })
 
 append scripts
     script(src=require('./main.ts'))
