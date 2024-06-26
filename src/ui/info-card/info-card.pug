@@ -1,5 +1,15 @@
 include layout/utils
 
+mixin info-card-wrapper(props)
+    - var className = props.active ? 'info-card info-card--active' : 'info-card'
+
+    if (props.isDiv)
+        div(class=className)&attributes(attributes)
+            block
+    else
+        li(class=className)&attributes(attributes)
+            block
+
 mixin info-card(props)
     -
         props = Object.assign({
@@ -7,11 +17,10 @@ mixin info-card(props)
             title: '',
             text: '',
             active: false,
+            isDiv: false,
         }, props || {})
 
-        var className = props.active ? 'info-card info-card--active' : 'info-card'
-
-    div(class=className)
+    +info-card-wrapper(props)&attributes(attributes)
         - var num = props.num < 10 ? `0${props.num}` : props.num
         .info-card__num=num
         .info-card__title=props.title

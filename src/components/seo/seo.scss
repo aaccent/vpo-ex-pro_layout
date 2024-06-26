@@ -1,0 +1,46 @@
+@use "styles/utils";
+
+.seo {
+  &__content {
+    font: 400 1.8rem var(--inter);
+    width: 100%;
+    max-width: 954px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+
+    &._full {
+      -webkit-line-clamp: initial;
+    }
+
+    :is(h1, h2, h3, h4, h5, h6) {
+      font: 500 4.2rem var(--involve);
+      margin-bottom: 36px;
+    }
+  }
+
+  &__btn {
+    text-decoration: underline;
+    font-weight: 500;
+    margin-top: 28px;
+  }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+  .seo {
+    &__content {
+      font-size: 1.4rem;
+
+      :is(h1, h2, h3, h4, h5, h6) {
+        font-size: 3rem;
+        margin-bottom: 22px;
+      }
+    }
+
+    &__btn {
+      font-size: 1.4rem;
+      margin-top: 14px;
+    }
+  }
+}
