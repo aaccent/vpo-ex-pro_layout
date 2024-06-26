@@ -1,0 +1,20 @@
+include layout/utils
+include ui/title-wrapper/title-wrapper
+include ui/info-card/info-card
+
+-
+    var items = [
+        { title: 'Заполнение опросного листа и подача заявки' },
+        { title: 'Обсуждение технических параметров. Поиск подходящего варианта, создание чертежа и 3D модели' },
+        { title: 'Внесение правок и корректировка чертежа' },
+        { title: 'Заключение договора и начало работы', active: true },
+    ]
+
++section.stages
+    +title-wrapper({ subtitle: 'Шаги реализации проекта', title: 'Прозрачная схема сотрудничества' })
+    .swiper.stages__list-wrapper
+        ul.swiper-wrapper.stages__list
+            each item, i in items
+                +info-card({ ...item, num: i + 1 }).swiper-slide
+        .swiper-progressbar
+    .progressbar
