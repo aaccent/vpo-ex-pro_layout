@@ -1,0 +1,56 @@
+@use "styles/utils";
+
+.stages {
+    .title-wrapper {
+        margin-bottom: 36px;
+    }
+
+    &__list-wrapper {
+        margin: 0 -80px;
+        padding: 0 80px;
+    }
+
+    &__list {
+        @include utils.reset-list;
+        margin-bottom: 32px;
+        gap: 18px;
+    }
+
+    .info-card {
+        width: 470px;
+        height: 300px;
+        flex-shrink: 0;
+    }
+
+    .swiper-progressbar {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .stages {
+        &__list-wrapper {
+            margin: 0 -20px;
+            padding: 0 20px;
+        }
+
+        &__list {
+            margin-bottom: 14px;
+            gap: 0;
+        }
+
+        .swiper-progressbar {
+            display: block;
+        }
+
+        .info-card {
+            width: 330px;
+            height: auto;
+            min-height: 190px;
+        }
+
+        .progressbar {
+            display: none;
+        }
+    }
+}

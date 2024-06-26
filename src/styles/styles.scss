@@ -3,6 +3,8 @@
 @use "general/variables";
 @use "general/fonts";
 @use "general/global";
+@use "node_modules/swiper/swiper";
+@use "node_modules/swiper/modules/pagination";
 
 // Page
 @use "layout/header/header";
@@ -23,6 +25,7 @@
 @use "ui/title-wrapper/title-wrapper";
 @use "ui/info-card/info-card";
 @use "ui/card/card";
+@use "ui/progressbar";
 
 // Components
 @use "components/page-hero/page-hero";
@@ -35,3 +38,4 @@
 @use "components/benefits/benefits";
 @use "components/projects/projects";
 @use "components/reviews/reviews";
+@use "components/stages/stages";
