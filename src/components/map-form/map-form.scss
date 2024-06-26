@@ -1,0 +1,56 @@
+@use "styles/utils";
+
+.map-form {
+    .container {
+        padding: 84px 56px;
+        display: grid;
+        background-color: var(--yellow);
+        border-radius: 20px;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+    }
+
+    &__title {
+        margin-bottom: 57px;
+        font-family: var(--involve);
+        font-size: 42px;
+        line-height: 1.24;
+    }
+
+    &__map {
+        width: 100%;
+        max-width: 655px;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 12px;
+        filter: grayscale(1) contrast(1.1);
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .map-form {
+        .container {
+            padding: 0;
+            background-color: transparent;
+            grid-template-columns: 1fr;
+            gap: 22px;
+        }
+
+        &__title {
+            margin-bottom: 22px;
+            font-size: 3rem;
+            line-height: 1.07;
+        }
+
+        &__inner {
+            padding: 36px 24px;
+            background-color: var(--yellow);
+            border-radius: 14px;
+        }
+
+        &__map {
+            height: 408px;
+            border-radius: 14px;
+        }
+    }
+}
