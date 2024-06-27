@@ -2,3 +2,8 @@ include layout/utils
 include features/popup/popup
 
 +popup("call", "call-popup")
+    .call-popup__content
+        .call-popup__title Уникальное торговое предложение в две строки
+        .call-popup__text Жирмунский, однако, настаивал, что синхрония доступна. Анжамбеман семантически отражает хорей.
+        include ui/form/form
+    +img(require('assets/static/popup-img.jpg?as=webp')).call-popup__img
