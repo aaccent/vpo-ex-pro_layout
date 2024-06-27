@@ -1,0 +1,15 @@
+extends layout/page
+
+append main
+    include ui/breadcrumbs/breadcrumbs
+    +breadcrumbs(['Главная', 'Название услуги'])
+    include components/page-hero/page-hero
+    +pageHero({
+        title: 'Уникальное торговое предложение в две строки',
+        banner: require('assets/content/project1.jpg'),
+        btnText: 'Оставить заявку'
+    })
+    include components/content/content
+    include components/gallery/gallery
+    include components/benefits/benefits
+    include components/seo/seo
