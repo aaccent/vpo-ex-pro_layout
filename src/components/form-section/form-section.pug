@@ -21,6 +21,11 @@ mixin form-section(props)
         h2.form-section__title
             | Вы можете задать любой интересующий вас вопрос и
             | наши менеджеры проведут бесплатную консультацию
+        .form-section__title.form-section__title--thanks
+            | Спасибо! Ваш запрос успешно отправлен.#[br]
+            | Пожалуйста дождитесь звонка нашего менеджера для уточнения деталей
+        include ui/socials/socials
+        +socials
         .form-section__inner
             .form-section__text Ваша контактная информация
             include ui/form/form

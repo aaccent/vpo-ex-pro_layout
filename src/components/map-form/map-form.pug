@@ -4,4 +4,9 @@ include layout/utils
     .map-form__inner
         h2.map-form__title Уникальное торговое предложение в две строки
         include ui/form/form
+    .map-form__inner.map-form__inner--thanks
+        h2.map-form__title Спасибо!#[br] Ваш запрос успешно отправлен
+        .map-form__text Пожалуйста дождитесь звонка нашего менеджера для уточнения деталей
+        include ui/socials/socials
+        +socials
     .map-form__map(data-key="f7fb0bb8-54f2-47a5-9f1a-05eb9b4ae1dc" data-coords="55.79072497120823, 49.10884635418719")

@@ -35,9 +35,8 @@ footer.footer
                 .footer__email: +anchor('mailto:mail@example.com') mail@example.com
                 .footer__address Республика Татарстан, г. Казань, ул. Баумана, 1
                 .footer__work-hours Пн — Пт: с 08:00 до 20:00
-                .footer__socials
-                    .footer__socials-title следите за нами в соц сетях:
-                    include ui/socials/socials
+                include ui/socials/socials
+                +socials
             each list in footerInfo
                 .footer-list
                     .footer-list__title=list.title

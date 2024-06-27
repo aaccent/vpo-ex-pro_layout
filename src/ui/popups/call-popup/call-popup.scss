@@ -1,0 +1,98 @@
+@use "styles/utils";
+
+.call-popup {
+    &__inner {
+        width: 100%;
+        max-width: 1440px;
+        display: flex;
+        overflow: hidden;
+        border-radius: 20px;
+    }
+
+    &__content {
+        padding: 84px 56px;
+        width: 100%;
+        max-width: 740px;
+        background-color: var(--yellow);
+
+        &--thanks {
+            display: none;
+        }
+    }
+
+    &__img {
+        width: 1px;
+        flex-grow: 1;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__title {
+        margin-bottom: 24px;
+        width: 100%;
+        font-family: var(--involve);
+        font-size: 4.2rem;
+        font-weight: 500;
+        line-height: 1.24;
+    }
+
+    &__text {
+        margin-bottom: 36px;
+    }
+
+    .form {
+        max-width: 530px;
+    }
+}
+
+.call-popup:has( .form._complete) .call-popup {
+    &__content {
+        display: none;
+
+        &--thanks {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .socials {
+            margin-top: auto;
+        }
+    }
+}
+
+@media only screen and (max-width: utils.$desktop1400) {
+    .call-popup {
+        &__content {
+            max-width: 55%;
+        }
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .call-popup {
+        &__img {
+            display: none;
+        }
+
+        &__content {
+            padding: 36px 24px;
+            max-width: initial;
+        }
+
+        &__title {
+            margin-bottom: 14px;
+            font-size: 3rem;
+            line-height: 1.07;
+        }
+
+        &__text {
+            margin-bottom: 22px;
+        }
+    }
+
+    .call-popup:has( .form._complete) .call-popup {
+        &__content {
+            height: 515px;
+        }
+    }
+}

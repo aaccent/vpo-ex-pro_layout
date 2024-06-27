@@ -10,6 +10,12 @@
         gap: 60px;
     }
 
+    &__inner {
+        &--thanks {
+            display: none;
+        }
+    }
+
     &__title {
         margin-bottom: 57px;
         font-family: var(--involve);
@@ -21,9 +27,29 @@
         width: 100%;
         max-width: 655px;
         height: 100%;
+        min-height: 405px;
         overflow: hidden;
         border-radius: 12px;
         filter: grayscale(1) contrast(1.1);
+    }
+}
+
+.map-form:has( .form._complete) .map-form {
+    &__inner {
+        display: none;
+
+        &--thanks {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .socials {
+            margin-top: auto;
+        }
+    }
+
+    &__title {
+        margin-bottom: 24px;
     }
 }
 
@@ -51,6 +77,16 @@
         &__map {
             height: 408px;
             border-radius: 14px;
+        }
+    }
+
+    .map-form:has( .form._complete) .map-form {
+        &__inner {
+            height: 570px;
+        }
+
+        &__title {
+            margin-bottom: 14px;
         }
     }
 }

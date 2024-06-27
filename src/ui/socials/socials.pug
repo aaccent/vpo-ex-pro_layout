@@ -19,7 +19,17 @@ include layout/utils
       icon: require('assets/icons/vk.svg')
     },
   ]
-ul.socials
-  each item in socials
-    +anchor(class=`social__item-${item.name}`).socials__item
-      +img(item.icon)
+
+mixin socials(props)
+  -
+    props = Object.assign({
+      title: true
+    }, props || {})
+
+  .socials
+    if props.title
+      .socials__title следите за нами в соц сетях:
+    ul.socials__list
+      each item in socials
+        +anchor(class=`social__item-${item.name}`).socials__item
+          +img(item.icon)

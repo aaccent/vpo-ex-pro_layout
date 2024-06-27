@@ -16,7 +16,7 @@
     width: 2.6px;
     height: 26px;
     border-radius: 4px;
-    background-color: #909090;
+    background-color: var(--yellow);
     @include utils.transition(background-color);
   }
 
@@ -31,7 +31,7 @@
   &:hover {
     &::before,
     &::after {
-      background-color: var(--green-light_color);
+      background-color: var(--yellow);
     }
   }
 }
@@ -46,6 +46,15 @@
   &::after {
     width: 2px;
     height: 20px;
+  }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+  .close-btn {
+    &::before,
+    &::after {
+      background-color: var(--base-black);
+    }
   }
 }
 
