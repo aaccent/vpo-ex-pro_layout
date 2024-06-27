@@ -1,0 +1,12 @@
+include layout/utils
+
+mixin breadcrumbs(props)
+    -
+        props = Object.assign(['Главная', 'О компании'], props || [])
+    .container
+        nav.breadcrumbs: ul
+            each item in props
+                li.breadcrumb
+                    +anchor=item
+            li.breadcrumb._back
+                +anchor='Назад'
