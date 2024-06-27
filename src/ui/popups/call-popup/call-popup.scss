@@ -14,6 +14,10 @@
         width: 100%;
         max-width: 740px;
         background-color: var(--yellow);
+
+        &--thanks {
+            display: none;
+        }
     }
 
     &__img {
@@ -38,6 +42,21 @@
 
     .form {
         max-width: 530px;
+    }
+}
+
+.call-popup:has( .form._complete) .call-popup {
+    &__content {
+        display: none;
+
+        &--thanks {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .socials {
+            margin-top: auto;
+        }
     }
 }
 
@@ -68,6 +87,12 @@
 
         &__text {
             margin-bottom: 22px;
+        }
+    }
+
+    .call-popup:has( .form._complete) .call-popup {
+        &__content {
+            height: 515px;
         }
     }
 }
