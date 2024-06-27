@@ -13,13 +13,13 @@ include layout/utils
         }, {
             title: 'Еще один интересный факт',
             description: 'Снова описание интересного факта',
-            img: require('assets/content/project2.jpg')
+            img: require('assets/content/project2.jpg?as=webp')
         },
 
     ]
 
 +section.gallery
-    .gallery__title Галерея
+    h2.gallery__title Галерея
     .swiper
         .swiper-wrapper
             each item, index in gallery
