@@ -5,6 +5,8 @@ append head
 
 append main
     include components/form-section/form-section
+    include ui/title/page-title/page-title
+    +page-title('Заголовок внутренней страницы')
     include components/page-hero/page-hero
     +pageHero({
         title: 'Уникальное торговое предложение в две строки',
