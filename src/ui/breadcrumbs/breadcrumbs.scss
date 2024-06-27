@@ -1,0 +1,67 @@
+@use "styles/utils";
+
+.breadcrumbs {
+    ul {
+        margin: 0 0 28px;
+        padding: 0;
+        display: flex;
+        font: 400 1.4rem var(--inter);
+        list-style-type: none;
+        gap: 6px;
+
+        .breadcrumb {
+            color: var(--base-black);
+
+            &:last-child._back {
+                display: none;
+
+                &::before {
+                    @include utils.bg-defaults();
+                    content: "";
+                    transform: rotate(180deg);
+                    width: 12px;
+                    height: 12px;
+                    display: block;
+                    background-image: url("assets/icons/arrow.svg");
+                }
+            }
+
+            &:has(+._back) {
+                color: hsla(0, 0%, 5%, .5);
+
+                &::before {
+                    color: var(--base-black)
+                }
+            }
+
+            &:not(:first-child) {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+
+                &::before {
+                    content: ">";
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .breadcrumbs {
+        ul {
+            margin-bottom: 18px;
+
+            .breadcrumb {
+                &:not(:last-child) {
+                    display: none;
+                }
+
+                &:last-child._back {
+                    display: flex;
+                }
+            }
+        }
+    }
+}
