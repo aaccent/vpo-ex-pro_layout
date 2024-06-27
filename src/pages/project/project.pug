@@ -1,0 +1,9 @@
+extends layout/page
+
+append main
+    include ui/breadcrumbs/breadcrumbs
+    +breadcrumbs(['Главная', 'Реализованные проекты', 'Название проекта'])
+    include ui/title/page-title/page-title
+    +page-title('Название реализованного проекта')
+    include components/content-cover/content-cover
+    include components/gallery/gallery
