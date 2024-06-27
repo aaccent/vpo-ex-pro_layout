@@ -1,0 +1,34 @@
+include layout/utils
+
+-
+    var gallery = [
+        {
+            title: 'Тут можно прописать какие то интересные факты',
+            description: 'Но можно ничего не прописывать и просто оставить фотогалерею, как указано на прототипе. На ваше усмотрение и вкус. Если такая идея не очень, то тогда с фото надо будет убрать затемненный градиент',
+            img: require('assets/content/content-im.jpg?as=webp')
+        }, {
+            title: 'Интересный факт',
+            description: 'Описание интересного факта ',
+            img: require('assets/content/sphere.jpg?as=webp')
+        }, {
+            title: 'Еще один интересный факт',
+            description: 'Снова описание интересного факта',
+            img: require('assets/content/project2.jpg')
+        },
+
+    ]
+
++section.gallery
+    .gallery__title Галерея
+    .swiper
+        .swiper-wrapper
+            each item, index in gallery
+                .gallery__item.swiper-slide
+                    +img(item.img).gallery__item-img
+                    .gallery__item-content
+                        .gallery__item-count=index + 1
+                        .gallery__item-title=item.title
+                        .gallery__item-description=item.description
+        .gallery__navigation-btns
+            button.arrow.arrow--prev
+            button.arrow
