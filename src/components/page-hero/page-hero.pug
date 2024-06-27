@@ -4,12 +4,13 @@ mixin pageHero(props)
     -
         props = Object.assign({
             title: '',
-            banner: ''
+            banner: '',
+            btnText: 'Подробнее'
         }, props || {})
 
     +section.page-hero
         .page-hero__wrapper
-            +img(props.img).page-hero__banner
+            +img(props.banner).page-hero__banner
             .page-hero__content
                 .page-hero__title=props.title
-                +wrapBreak: button.button.button-white.page-hero__button Подробнее
+                +wrapBreak: button.button.button-white.page-hero__button=props.btnText
