@@ -1,0 +1,72 @@
+@use "styles/utils";
+
+.content-cover {
+    img {
+        height: 574px;
+        width: 100%;
+        object-position: center;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 70px;
+    }
+
+    h2 {
+        position: relative;
+        left: 0;
+        font: 600 1.6rem var(--inter);
+        max-width: 20%;
+        text-transform: uppercase;
+    }
+
+    p, ol, ul {
+        font: 400 1.8rem/1.33 var(--inter);
+        position: relative;
+        top: -20px;
+        margin-left: 363px;
+        margin-bottom: 12px;
+
+        &:has(+h2) {
+            margin-bottom: 100px;
+        }
+    }
+
+    ol, ul {
+        padding: 0;
+        margin-top: 0;
+        margin-left: 383px;
+
+        li:not(:last-child) {
+            margin-bottom: 4px;
+        }
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .content-cover {
+        img {
+            height: 266px;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            position: initial;
+            max-width: 100%;
+            font-size: 1.2rem;
+            margin-bottom: 22px;
+
+        }
+        p, ol, ul {
+            position: initial;
+            margin-left: 0;
+            font-size: 1.4rem;
+
+            &:has(+h2) {
+                margin-bottom: 40px;
+            }
+        }
+
+        ol, ul {
+            padding-left: 17px;
+        }
+    }
+}
