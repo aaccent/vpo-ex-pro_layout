@@ -1,6 +1,8 @@
 extends layout/page
 
 append main
+    include ui/breadcrumbs/breadcrumbs
+    +breadcrumbs(['Главная', 'Название услуги'])
     include components/page-hero/page-hero
     +pageHero({
         title: 'Уникальное торговое предложение в две строки',
