@@ -27,6 +27,16 @@
     .socials {
         gap: 10px;
 
+        &__title {
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+            line-height: 1.33;
+        }
+
+        &__list {
+            gap: 10px;
+        }
+
         &__item {
             @include utils.circle(34px)
         }
