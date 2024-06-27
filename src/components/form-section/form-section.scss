@@ -27,6 +27,14 @@
         font-size: 4.2rem;
         font-weight: 500;
         line-height: 1.24;
+
+        &--thanks {
+            display: none;
+        }
+    }
+
+    .socials {
+        display: none;
     }
 
     &__inner {
@@ -42,6 +50,35 @@
         line-height: 1.37;
         text-transform: uppercase;
         opacity: 0.7;
+    }
+}
+
+.form-section:has( .form._complete) {
+    .container {
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-section__title {
+        display: none;
+
+        &--thanks {
+            display: block;
+        }
+    }
+
+    &.form-section--black .socials__item {
+        filter: var(--filter-white);
+    }
+
+    .socials {
+        margin-top: auto;
+        display: block;
+    }
+
+    .form-section__inner {
+        display: none;
     }
 }
 
@@ -64,6 +101,12 @@
 
         &__inner {
             grid-template-columns: 1fr;
+        }
+    }
+
+    .form-section:has( .form._complete) {
+        .container {
+            height: 570px;
         }
     }
 }
