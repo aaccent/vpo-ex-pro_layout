@@ -1,5 +1,8 @@
-void function () {
+void function() {
     const seoContent = document.querySelector('.seo__content')
+
+    if (!seoContent) return
+
     const seoBtn = seoContent.closest('.seo').querySelector('.seo__btn')
 
     seoBtn.addEventListener('click', () => {
