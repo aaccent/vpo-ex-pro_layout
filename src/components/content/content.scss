@@ -3,7 +3,7 @@
 .content {
 
     &__title {
-        margin-bottom: 36px;
+        margin: 70px 0 36px;
 
         &:not(:has( :is(h2, h3, h4, h5, h6))) {
             margin-bottom: 0;
@@ -30,7 +30,7 @@
             display: block;
             font: 600 1.6rem var(--inter);
             text-transform: uppercase;
-            opacity: .5;
+            opacity: .7;
         }
 
         h2 {
@@ -76,7 +76,7 @@
 @media only screen and (max-width: utils.$tablet1000) {
     .content {
         &__title {
-            margin-bottom: 22px;
+            margin: 32px 0 22px;
 
             &:not(:first-child) {
                 margin-top: 22px;
