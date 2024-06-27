@@ -41,14 +41,9 @@
         font: 400 1.6rem var(--inter);
     }
 
-    &__socials {
+    .socials {
         position: absolute;
         bottom: 0;
-
-        &-title {
-            text-transform: uppercase;
-            font: 600 1.4rem var(--inter);
-        }
     }
 
     &-list {
@@ -127,7 +122,7 @@
             margin-bottom: 14px;
         }
 
-        &__socials {
+        .socials {
             position: initial;
             margin-top: 22px;
         }

@@ -1,28 +1,44 @@
 @use "styles/utils";
 
 .socials {
-  margin: 15px 0 0;
-  padding: 0;
-  list-style-type: none;
-  display: flex;
-  gap: 14px;
-  align-items: center;
+    &__title {
+        margin-bottom: 15px;
+        font: 600 1.4rem var(--inter);
+        text-transform: uppercase;
+    }
 
-  &__item {
-    @include utils.circle(38px);
-    border: 1px solid hsla(0, 0%, 5%, .2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+    &__list {
+        @include utils.reset-list;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+
+    &__item {
+        @include utils.circle(38px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid hsla(0, 0%, 5%, .2);
+    }
 }
 
 @media only screen and (max-width: utils.$tablet1000) {
-  .socials {
-    gap: 10px;
+    .socials {
+        gap: 10px;
 
-    &__item {
-      @include utils.circle(34px)
+        &__title {
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+            line-height: 1.33;
+        }
+
+        &__list {
+            gap: 10px;
+        }
+
+        &__item {
+            @include utils.circle(34px)
+        }
     }
-  }
 }

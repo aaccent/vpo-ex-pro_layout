@@ -5,6 +5,7 @@ import 'components/map-form/map-form.js'
 import 'components/benefits/benefits.js'
 import 'components/reviews/reviews.js'
 import 'components/seo/seo.js'
+import 'components/gallery/gallery.js'
 
 import 'features/popup/popup'
 

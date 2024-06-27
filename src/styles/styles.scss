@@ -12,6 +12,7 @@
 
 // Popup
 @use "features/popup/popup";
+@use "ui/popups/call-popup/call-popup";
 
 // Ui
 @use "ui/buttons/close-btn";
@@ -43,3 +44,4 @@
 @use "components/reviews/reviews";
 @use "components/stages/stages";
 @use "components/content-cover/content-cover";
+@use "components/gallery/gallery";
