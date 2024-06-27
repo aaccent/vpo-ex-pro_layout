@@ -3,8 +3,7 @@ include layout/utils
 mixin breadcrumbs(props)
     -
         props = Object.assign(['Главная', 'О компании'], props || [])
-    .container
-        nav.breadcrumbs: ul
+    .container.breadcrumbs: nav: ul
             each item in props
                 li.breadcrumb
                     +anchor=item
