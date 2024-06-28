@@ -13,4 +13,4 @@ mixin pageHero(props)
             +img(props.banner).page-hero__banner
             .page-hero__content
                 .page-hero__title=props.title
-                +wrapBreak: button.button.button-white.page-hero__button=props.btnText
+                +wrapBreak: button.button.button-white.page-hero__button(data-action='popup' data-popup='call')=props.btnText
