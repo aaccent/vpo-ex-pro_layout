@@ -7,6 +7,7 @@ import 'components/benefits/benefits.js'
 import 'components/reviews/reviews.js'
 import 'components/seo/seo.js'
 import 'components/gallery/gallery.js'
+import 'components/stock-section/stock-section.js'
 
 import 'features/popup/popup'
 

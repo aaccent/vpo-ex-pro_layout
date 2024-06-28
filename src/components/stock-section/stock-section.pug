@@ -1,0 +1,30 @@
+include layout/utils
+
++section.stock-section
+    each _ in Array(3)
+        .stock-section__item
+            .stock-section__item-content
+                .stock-section__item-title Название оборудования
+                .stock-section__item-text
+                    p
+                        | Жирмунский, однако, настаивал, что синхрония доступна.
+                        | Анжамбеман семантически отражает хорей.
+                        | Представленный лексико-семантический анализ является психолингвистическим в своей основе,
+                        | но графомания возможна.
+                    p
+                        | Подтекст, если уловить хореический ритм или аллитерацию на "р",
+                        | иллюстрирует культурный размер. Голос персонажа интуитивно понятен.
+                        | Субъективное восприятие вразнобой нивелирует дольник.
+                .stock-section__price
+                    span.stock-section__price-title стоимость
+                    span.stock-section__price-num 9 990 ₽
+                +popupBtn('call').button.button-form.button-form--white Узнать подробности
+            .stock-section__gallery-wrapper
+                span.stock-section__tag Фото и чертежи
+                .stock-section__gallery.swiper
+                    .stock-section__gallery-inner.swiper-wrapper
+                        each _ in Array(3)
+                            +img(require('assets/content/content-im.jpg?as=webp')).stock-section__img.swiper-slide
+                    .stock-section__buttons
+                        +wrapBreak: button(type="button").arrow.arrow--prev
+                        +wrapBreak: button(type="button").arrow.arrow--next
