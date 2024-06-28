@@ -5,7 +5,6 @@ mixin pageHero(props)
         props = Object.assign({
             title: '',
             banner: '',
-            btnText: 'Подробнее'
         }, props || {})
 
     +section.page-hero
@@ -13,4 +12,5 @@ mixin pageHero(props)
             +img(props.banner).page-hero__banner
             .page-hero__content
                 .page-hero__title=props.title
-                +wrapBreak: button.button.button-white.page-hero__button(data-action='popup' data-popup='call')=props.btnText
+                +wrapBreak: button.button.button-white.page-hero__button(data-action='popup' data-popup='call')='Оставить заявку'
+
