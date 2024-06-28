@@ -1,7 +1,6 @@
 extends layout/page
 
 append head
-    link(href=require('./styles.scss') rel="stylesheet")
 
 append main
     include components/form-section/form-section
@@ -21,6 +20,3 @@ append main
     include components/stages/stages
     include components/blog/blog
     include components/seo/seo
-
-append scripts
-    script(src=require('./main.ts'))

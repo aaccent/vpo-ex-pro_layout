@@ -1,0 +1,10 @@
+extends layout/page
+
+append main
+    include ui/breadcrumbs/breadcrumbs
+    +breadcrumbs(['Главная', 'Оборудование в наличии'])
+    include ui/title/page-title/page-title
+    +page-title('Оборудование в наличии')
+    include components/stock-section/stock-section
+    include components/benefits/benefits
+    include components/seo/seo
