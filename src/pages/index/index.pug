@@ -5,11 +5,7 @@ prepend head
 
 append main
     include components/form-section/form-section
-    include components/page-hero/page-hero
-    +pageHero({
-        title: 'Уникальное торговое предложение в две строки',
-        banner: require('assets/content/page-hero-banner.jpg?as=webp')
-    })
+    include components/main-slider/main-slider
     include components/directions/directions
     include components/spheres/spheres
     +form-section({ variation: 'black' })
