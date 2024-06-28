@@ -8,34 +8,30 @@
     }
 
     &__info {
-        max-width: 551px;
         width: 100%;
+        max-width: 551px;
         display: flex;
         flex-direction: column;
         gap: 22px;
 
         &-header {
-            font: 600 3.4rem var(--involve);
             margin-bottom: 14px;
+            font: 600 3.4rem var(--involve);
         }
 
         &-block {
-            border-bottom: 1px solid var(--base-gray);
             padding-bottom: 22px;
+            border-bottom: 1px solid var(--base-gray);
         }
 
         &-title, .socials__title {
-            font: 500 2.6rem var(--inter);
             margin-bottom: 16px;
+            font: 500 2.6rem var(--inter);
             text-transform: none;
         }
 
-        span {
-            font: 500 1.4rem var(--inter);
-            opacity: .7;
-        }
-
         &-tel, &-email, &-address {
+            display: block;
             font: 500 2rem var(--inter);
         }
 
@@ -44,23 +40,29 @@
         }
 
         &-work-hours {
+            margin-bottom: 6px;
             font: 500 1.6rem var(--inter);
             opacity: .7;
-            margin-bottom: 6px;
         }
 
         &-address {
-            max-width: 243px;
             width: 100%;
+            max-width: 243px;
         }
     }
 
+    &__contact-title {
+        display: block;
+        font: 500 1.4rem var(--inter);
+        opacity: .7;
+    }
+
     &__map {
-        max-width: 832px;
         width: 100%;
+        max-width: 832px;
         height: 520px;
-        border-radius: 12px;
         overflow: hidden;
+        border-radius: 12px;
         filter: grayscale(1) contrast(1.1);
     }
 
@@ -75,9 +77,13 @@
             flex-direction: column;
         }
 
+        &__contact-title {
+            font-size: 1.2rem;
+        }
+
         &__map {
-            order: -1;
             margin-bottom: 22px;
+            order: -1;
         }
 
         &__info {
@@ -88,18 +94,15 @@
             }
 
             &-header {
+                margin-bottom: 0;
                 font-size: 2.6rem;
                 line-height: 28px;
-                margin-bottom: 0;
             }
 
             &-title, .socials__title {
                 font-size: 2.2rem;
             }
 
-            span {
-                font-size: 1.2rem;
-            }
             &-tel, &-email, &-address {
                 font-size: 1.6rem;
             }
