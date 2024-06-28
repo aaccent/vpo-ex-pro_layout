@@ -1,6 +1,7 @@
 extends layout/page
 
-append head
+preappend head
+    - title = 'Контакты'
 
 append main
     include ui/breadcrumbs/breadcrumbs
@@ -13,10 +14,10 @@ append main
                 .contacts__info-header Полное название ВПО ЭКС-ПРО
                 .contacts__info-block
                     .contacts__info-title Контактная информация
-                    span телефон:
-                    .contacts__info-tel 8 (976) 543 21 00
-                    span электронная почта:
-                    .contacts__info-email mail@example.com
+                    +wrapBreak: span телефон:
+                    +anchor('tel:8 (976) 543 21 00').contacts__info-tel 8 (976) 543 21 00
+                    +wrapBreak: span электронная почта:
+                    +anchor('mail@example.com').contacts__info-email mail@example.com
                 .contacts__info-block
                     .contacts__info-title Время работы и адрес
                     .contacts__info-work-hours Пн — Пт: с 08:00 до 20:00
