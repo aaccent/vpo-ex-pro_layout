@@ -9,6 +9,7 @@ import 'components/reviews/reviews.js'
 import 'components/seo/seo.js'
 import 'components/gallery/gallery.js'
 import 'components/stock-section/stock-section.js'
+import 'components/main-slider/main-slider.js'
 
 import 'features/popup/popup'
 import 'features/forms'

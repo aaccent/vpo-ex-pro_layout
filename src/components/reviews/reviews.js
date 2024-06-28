@@ -5,7 +5,7 @@ import { Navigation } from 'swiper/modules'
 new Swiper('.reviews__list.swiper', {
     modules: [ Navigation ],
     navigation: {
-        nextEl: '.arrow',
+        nextEl: '.arrow.arrow--next',
         prevEl: '.arrow.arrow--prev',
     },
     slidesPerView: 1.1,

@@ -1,0 +1,91 @@
+
+@use "styles/utils";
+@use "node_modules/swiper/swiper";
+@use "node_modules/swiper/modules/navigation";
+@use "node_modules/swiper/modules/effect-fade";
+
+.main-slider {
+    &__wrapper {
+        position: relative;
+        height: 578px;
+        border-radius: 20px;
+        overflow: hidden;
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: hsla(0, 0%, 0%, 0.4);
+        }
+    }
+
+    &__banner, &__video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__content {
+        position: absolute;
+        z-index: 2;
+        inset: 0;
+        padding: 130px 64px ;
+    }
+
+    &__title {
+        color: var(--base-white);
+        font: 600 6.2rem/1.06 var(--involve);
+        max-width: 888px;
+        width: 100%;
+        margin-bottom: 46px;
+    }
+
+    &__navigations {
+        position: absolute;
+        left: 64px;
+        bottom: 64px;
+        z-index: 3;
+        display: flex;
+        gap: 24px;
+
+        .arrow {
+            border-color: var(--base-white);
+
+            &::after {
+                filter: var(--filter-white);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .main-slider {
+        &__wrapper {
+            max-height: 524px;
+            height: 100svh;
+            border-radius: 14px;
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            padding: 36px 24px;
+        }
+
+        &__title {
+            margin: 0;
+            font-size: 3.8rem;
+        }
+
+        &__button {
+            width: 190px;
+        }
+
+        &__navigations {
+            left: 24px;
+            bottom: 36px;
+        }
+    }
+}
