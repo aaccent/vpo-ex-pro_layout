@@ -4,9 +4,6 @@ include ui/card/card
 prepend head
     - title = 'Список проектов'
 
-append head
-    link(href=require('./projects-list.scss') rel="stylesheet")
-
 append main
     include ui/breadcrumbs/breadcrumbs
     +breadcrumbs(['Главная', 'Реализованные проекты'])
