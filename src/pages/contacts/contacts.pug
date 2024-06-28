@@ -1,0 +1,29 @@
+extends layout/page
+
+preappend head
+    - title = 'Контакты'
+
+append main
+    include ui/breadcrumbs/breadcrumbs
+    +breadcrumbs(['Главная', 'Контакты'])
+    include ui/title/page-title/page-title
+    +page-title('Контакты')
+    +section.contacts
+        .contacts-content
+            .contacts__info
+                .contacts__info-header Полное название ВПО ЭКС-ПРО
+                .contacts__info-block
+                    .contacts__info-title Контактная информация
+                    +wrapBreak: span телефон:
+                    +anchor('tel:8 (976) 543 21 00').contacts__info-tel 8 (976) 543 21 00
+                    +wrapBreak: span электронная почта:
+                    +anchor('mail@example.com').contacts__info-email mail@example.com
+                .contacts__info-block
+                    .contacts__info-title Время работы и адрес
+                    .contacts__info-work-hours Пн — Пт: с 08:00 до 20:00
+                    .contacts__info-address Республика Татарстан, г. Казань, ул. Баумана, 1
+                include ui/socials/socials
+                +socials({title: 'Социальные сети'})
+            .contacts__map(data-key="f7fb0bb8-54f2-47a5-9f1a-05eb9b4ae1dc" data-coords="55.79072497120823, 49.10884635418719")
+    include components/form-section/form-section
+    +form-section({variation: 'black'})

@@ -28,6 +28,8 @@ mixin socials(props)
 
   .socials
     if props.title
+      .socials__title=props.title
+    else
       .socials__title следите за нами в соц сетях:
     ul.socials__list
       each item in socials
