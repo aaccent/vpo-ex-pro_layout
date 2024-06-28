@@ -1,6 +1,6 @@
 # Верстка ВПО ЭКС ПРО
 
-**Страницы:**
+## Страницы:
 * [Главная](https://aaccent.github.io/vpo-ex-pro_layout/index.html)
 * [О компании](https://aaccent.github.io/vpo-ex-pro_layout/about.html)
 * [Статья](https://aaccent.github.io/vpo-ex-pro_layout/article.html)
@@ -14,3 +14,8 @@
 * [Сфера](https://aaccent.github.io/vpo-ex-pro_layout/spheres-detailed.html)
 * [Список сфер](https://aaccent.github.io/vpo-ex-pro_layout/spheres-list.html)
 * [Контакты](https://aaccent.github.io/vpo-ex-pro_layout/contacts.html)
+
+## Формы
+На все формы нужно обязательно ставить атрибут `novalidate`. 
+Для php обработчика нужно добавить ссылку в атрибут `data-handler`.
+На ссылку из атрибута будет отправлен POST запрос с данными из формы.
