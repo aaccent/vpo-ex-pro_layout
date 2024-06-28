@@ -1,9 +1,42 @@
 include layout/utils
 
+-
+    var mainSlider = [
+        {
+            title: 'Уникальное торговое предложение в две строки',
+            img: require('assets/content/content-im.jpg'),
+            video: {
+                mp4: require('assets/content/video.mp4'),
+                webm: require('assets/content/video.webm')
+            }
+
+        },
+        {
+            title: 'Уникальное торговое предложение в две строки',
+            img: require('assets/content/content-im.jpg'),
+        },
+        {
+            title: 'Уникальное торговое предложение в две строки',
+            img: require('assets/content/sphere5.jpg'),
+        },
+
+    ]
+
 +section.main-slider
-    .main-slider__wrapper
-        +img(require('assets/content/content-im.jpg')).main-slider__banner
-        .main-slider__content
-            .main-slider__title Заголовок
-            +wrapBreak: +anchor.button.button-white.main-slider__button='Подробнее'
+    .swiper
+        .swiper-wrapper
+            each item in mainSlider
+                .swiper-slide.main-slider__wrapper
+                    if item.video
+                        video(muted autoplay loop).main-slider__video
+                            source(src=item.video.webm type='video/webm')
+                            source(src=item.video.mp4 type='video/mp4')
+                    else
+                        +img(item.img).main-slider__banner
+                    .main-slider__content
+                        .main-slider__title=item.title
+                        +wrapBreak: +anchor.button.button-white.main-slider__button='Подробнее'
+        .main-slider__navigations
+            button.arrow.arrow--prev
+            button.arrow.arrow--next
 
