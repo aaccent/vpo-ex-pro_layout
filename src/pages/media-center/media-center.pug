@@ -1,9 +1,6 @@
 extends layout/page
 
 
-append head
-    link(href=require('./media-center.scss') rel="stylesheet")
-
 append main
     include ui/breadcrumbs/breadcrumbs
     +breadcrumbs(['Главная', 'Медиацентр'])
@@ -28,7 +25,3 @@ append main
                   tag: 'team'
               })
         +anchor.button.button-transparent.media-center__btn Смотреть еще
-
-
-append scripts
-    script(src=require('./media-center.js'))

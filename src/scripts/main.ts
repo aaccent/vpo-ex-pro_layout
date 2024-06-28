@@ -10,3 +10,5 @@ import 'components/gallery/gallery.js'
 import 'features/popup/popup'
 
 import 'ui/select/select.js'
+
+import 'pages/media-center/media-center.js'
