@@ -12,3 +12,5 @@ import 'components/stock-section/stock-section.js'
 import 'features/popup/popup'
 
 import 'ui/select/select.js'
+
+import 'pages/media-center/media-center.js'

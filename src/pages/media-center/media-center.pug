@@ -1,0 +1,27 @@
+extends layout/page
+
+
+append main
+    include ui/breadcrumbs/breadcrumbs
+    +breadcrumbs(['Главная', 'Медиацентр'])
+    include ui/title/page-title/page-title
+    +page-title('Медиацентр')
+    .container
+        .filter
+            .filter__btns
+                .filter__btns-wrapper
+                    button.filter__btn._active Все
+                    button.filter__btn Новости
+                    button.filter__btn Полезная информация
+                    button.filter__btn Команда
+            include ui/select/select
+        ul.media-center
+            each _ in Array(9)
+              include ui/card/card
+              +card({
+                  img: require('assets/content/sphere5.jpg?as=webp'),
+                  title: 'Название новости',
+                  description: 'Описание проекта, которое умещается в 3 строки и раскрывает всю основную суть кейса, мотивируя кликнуть на блок',
+                  tag: 'team'
+              })
+        +anchor.button.button-transparent.media-center__btn Смотреть еще
