@@ -4,8 +4,8 @@ import { EffectFade, Navigation } from 'swiper/modules'
 new Swiper('.gallery .swiper', {
     modules: [Navigation, EffectFade],
     navigation: {
-        nextEl: '.arrow',
-        prevEl: '.arrow .arrow--prev',
+        nextEl: '.arrow.arrow--next',
+        prevEl: '.arrow.arrow--prev',
     },
     loop: true,
     slidesPerView: 1,
