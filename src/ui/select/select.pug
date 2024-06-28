@@ -3,15 +3,16 @@ include layout/utils
 -
   var options = [
     'по умолчанию',
-    'названию',
-    'цене',
-    'названию',
+    'по названию',
+    'по цене',
+    'по названию',
   ]
 
-.select
-  input(type='hidden', value=options[0])
-  .select__selected.select__item
-    +wrapBreak: button=options[0]
-  ul.select__list
-    each option in options
-      li.select__item: +wrapBreak: button=option
+.select-wrapper.container Сортировать:
+  .select
+    input(type='hidden', value=options[0])
+    .select__selected.select__item
+      +wrapBreak: button=options[0]
+    ul.select__list
+      each option in options
+        li.select__item: +wrapBreak: button=option

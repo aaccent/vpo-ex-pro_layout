@@ -1,0 +1,21 @@
+extends layout/page
+include ui/card/card
+
+append head
+    link(href=require('./projects-list.scss') rel="stylesheet")
+
+append main
+    include ui/breadcrumbs/breadcrumbs
+    +breadcrumbs(['Главная', 'Реализованные проекты'])
+    include ui/title/page-title/page-title
+    +page-title('Реализованные проекты')
+    include ui/select/select
+    .container
+        ul.projects-list
+            each _, index in Array(9)
+                +card({
+                    img: require('assets/content/content-im.jpg'),
+                    title: `Название проекта ${index+1}`,
+                    description: `Описание проекта ${index+1}, которое умещается в 3 строки и раскрывает всю основную суть кейса, мотивируя кликнуть на блок`
+                })
+        +anchor.button.button-transparent.projects-list__btn Смотреть еще
