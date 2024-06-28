@@ -1,5 +1,8 @@
 extends layout/page
 
+prepend head
+    - title = 'Сфера'
+
 append main
     include ui/breadcrumbs/breadcrumbs
     +breadcrumbs(['Главная', 'Сфера применения', 'Химическая промышленность'])

@@ -1,6 +1,9 @@
 extends layout/page
 include ui/card/card
 
+prepend head
+    - title = 'Список проектов'
+
 append head
     link(href=require('./projects-list.scss') rel="stylesheet")
 

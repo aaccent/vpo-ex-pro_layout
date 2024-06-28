@@ -1,5 +1,8 @@
 extends layout/page
 
+prepend head
+    - title = 'Статья'
+
 append main
     include ui/breadcrumbs/breadcrumbs
     +breadcrumbs(['Главная', 'Медиацентр', 'Название новости'])

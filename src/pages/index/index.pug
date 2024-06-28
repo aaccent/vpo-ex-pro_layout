@@ -1,6 +1,7 @@
 extends layout/page
 
-append head
+prepend head
+    - title = 'Главная'
 
 append main
     include components/form-section/form-section
