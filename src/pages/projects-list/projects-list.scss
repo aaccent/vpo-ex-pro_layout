@@ -1,0 +1,27 @@
+@use "styles/utils";
+
+.projects-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin: 36px 0 0;
+    padding: 0;
+    list-style-type: none;
+
+    &__btn {
+        margin: 36px auto 0;
+        width: 248px;
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .projects-list {
+        grid-template-columns: 1fr;
+        margin-top: 22px;
+
+        &__btn {
+            width: 100%;
+            margin-top: 18px;
+        }
+    }
+}
