@@ -1,6 +1,6 @@
-form.form
-    +wrapBreak: input(placeholder="Ваше имя" name="name" required).input
-    +wrapBreak: input(placeholder="Номер телефона" name="tel" required).input
+form(novalidate data-handler="/call.php").form
+    +wrapBreak: input(placeholder="Ваше имя" name="name" required data-required-error="Необходимо указать ваше имя").input
+    +wrapBreak: input(placeholder="Номер телефона" type="tel" name="tel" required data-required-error="Необходимо указать ваш номер").input
     .form__policy
         | Нажимая на кнопку "Отправить заявку” вы подтверждаете своё согласие с
         +anchor политикой конфиденциальности

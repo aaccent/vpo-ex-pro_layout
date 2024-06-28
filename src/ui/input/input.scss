@@ -1,26 +1,56 @@
-@use 'styles/utils';
+@use "styles/utils";
 
 .input {
-  font: 400 1.6rem/1.37 var(--inter);
-  width: 100%;
-  border: 1px solid hsla(0, 0%, 5%, 0.4);
-  border-radius: 4px;
-  padding: 15px 18px;
-  color: var(--base-black);
+    padding: 15px 18px;
+    width: 100%;
+    color: var(--base-black);
+    font: 400 1.6rem/1.37 var(--inter);
+    border-radius: 4px;
+    border: 1px solid hsla(0, 0%, 5%, 0.4);
 
-  &::placeholder {
-    font: inherit;
-    opacity: .7;
-  }
+    &::placeholder {
+        font: inherit;
+        opacity: .7;
+    }
 
-  &:focus {
-    border-color: hsla(0, 0%, 5%, 0.7);
-  }
+    &:focus {
+        border-color: hsla(0, 0%, 5%, 0.7);
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    &.invalid {
+        border-color: #ff4433;
+    }
+
+    &__error {
+        display: none;
+        color: #ff4433;
+        font-size: 1.4rem;
+        line-height: 1.29;
+    }
+
+    &.input.invalid + &__error {
+        display: block;
+    }
 }
 
 @media only screen and (max-width: utils.$tablet1000) {
-  .input {
-    padding: 13px 14px;
-    font-size: 1.4rem;
-  }
+    .input {
+        padding: 13px 14px;
+        font-size: 1.4rem;
+
+        &__wrapper {
+            gap: 3px;
+        }
+
+        &__error {
+            font-size: 1.2rem;
+            line-height: 1.17;
+        }
+    }
 }

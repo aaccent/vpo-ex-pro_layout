@@ -1,7 +1,7 @@
 @use "styles/utils";
 
 .form {
-    .input + .input {
+    :is(.input, .input__wrapper) + :is(.input, .input__wrapper) {
         margin-top: 18px;
     }
 
@@ -20,7 +20,7 @@
 
 @media only screen and (max-width: utils.$tablet1000) {
     .form {
-        .input + .input {
+        :is(.input, .input__wrapper) + :is(.input, .input__wrapper) {
             margin-top: 14px;
         }
 

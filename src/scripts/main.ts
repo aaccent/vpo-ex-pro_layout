@@ -11,6 +11,8 @@ import 'components/gallery/gallery.js'
 import 'components/stock-section/stock-section.js'
 
 import 'features/popup/popup'
+import 'features/forms'
+import 'features/inputMask'
 
 import 'ui/select/select.js'
 

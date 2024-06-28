@@ -23,8 +23,21 @@ function submitHandler(e: SubmitEvent) {
             return console.error('Error while submitting form\n', 'FormData:\n', formData, '\n', ' Response:\n', res)
         }
 
+        form.classList.add('_complete')
         form.dispatchEvent(formSent)
     })
+}
+
+function createInvalidInput(input: HTMLInputElement) {
+    if (!input.parentElement) return
+    if (input.parentElement.classList.contains('input__wrapper')) return
+
+    const inputWrapper = document.createElement('div')
+    inputWrapper.className = 'input__wrapper'
+    inputWrapper.innerHTML = `<div class="input__error">${input.dataset.requiredError}</div>`
+
+    input.parentElement.insertBefore(inputWrapper, input)
+    inputWrapper.prepend(input)
 }
 
 function validateForm(form: HTMLFormElement): Boolean {
@@ -32,12 +45,13 @@ function validateForm(form: HTMLFormElement): Boolean {
 
     const requiredInputs = form.querySelectorAll<HTMLInputElement>('input[required]')
 
-    requiredInputs.forEach(i => {
-        if (i.value !== '') return
+    requiredInputs.forEach(input => {
+        if (input.value !== '') return
 
         valid = false
-        i.classList.add('invalid')
-        i.addEventListener('input', () => i.classList.remove('invalid'), { once: true })
+        input.classList.add('invalid')
+        createInvalidInput(input)
+        input.addEventListener('input', () => input.classList.remove('invalid'), { once: true })
     })
 
     return valid
