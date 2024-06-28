@@ -1,5 +1,6 @@
 import 'layout/header/header.js'
 import 'layout/footer/footer.js'
+import 'pages/contacts/contacts.js'
 
 import 'components/map-form/map-form.js'
 import 'components/benefits/benefits.js'
