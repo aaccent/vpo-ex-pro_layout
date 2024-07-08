@@ -18,6 +18,9 @@
     background-color: var(--base-white);
     border-radius: 12px;
     padding: 24px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
 
     &-header {
       display: flex;
@@ -61,7 +64,7 @@
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 6;
       overflow: hidden;
-
+      margin-bottom: 22px;
       &._full {
         -webkit-line-clamp: initial;
       }
@@ -70,7 +73,7 @@
     &-btn {
       font: 500 1.8rem var(--inter);
       text-decoration: underline;
-      margin-top: 22px;
+      margin-top: auto;
     }
   }
 
