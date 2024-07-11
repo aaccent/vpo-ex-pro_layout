@@ -12,11 +12,11 @@
   gap: 12px;
 
   &:after {
-    @include utils.bg-defaults(cover);
+    @include utils.bg-defaults(contain);
     content: "";
     transform: rotate(-45deg);
-    width: 14px;
-    height: 12px;
+    width: 18px;
+    height: 18px;
     display: block;
     background-image: url("assets/icons/arrow.svg");
   }
@@ -24,8 +24,8 @@
   &-header {
     background: transparent;
     border-color: var(--base-black);
-    padding: 12px 0;
-    width: 295px;
+    padding: 12px 28px;
+
 
     @include utils.hover {
       border-color: transparent;
