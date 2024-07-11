@@ -20,11 +20,14 @@
         @include utils.reset-list;
         width: 100%;
         max-width: 590px;
-        height: calc(100vh - 80px);
+        height: fit-content;
         display: flex;
         flex-direction: column;
-        overflow: hidden;
         gap: 16px;
+
+        &-wrapper {
+            height: 725px;
+        }
 
         .swiper-slide {
             height: fit-content;
@@ -58,6 +61,7 @@
         &__list-wrapper {
             margin: 0 -20px;
             padding: 0 20px;
+            height: fit-content;
         }
 
         &__list {

@@ -14,6 +14,7 @@
         @include utils.reset-list;
         margin-bottom: 32px;
         gap: 18px;
+        width: fit-content;
     }
 
     .info-card {
