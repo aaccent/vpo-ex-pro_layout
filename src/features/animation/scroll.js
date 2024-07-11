@@ -3,6 +3,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger.js'
 
 gsap.registerPlugin(ScrollTrigger)
 
+
 void function() {
     const contentImages = document.querySelectorAll('.content img')
     if (!contentImages.length) return
@@ -12,13 +13,13 @@ void function() {
             '(min-width: 1000px)': function() {
                 gsap.to(image, {
                     scrollTrigger: {
-                        trigger: '.content__text', start: 'top 70%', end:'80% 50%', pin: false, scrub: true, //markers: true,
-                    },
-                    maxWidth: '100%',
-                    width: '100%',
-                    height: '600px',
-                    marginLeft: 0,
-                    marginRight: 0,
+                        trigger: '.content__text',
+                        start: 'top 70%',
+                        end: '80% 50%',
+                        pin: false,
+                        scrub: true,
+                        onLeave: () => ScrollTrigger.refresh()
+                    }, maxWidth: '100%', width: '100%', height: '600px', marginLeft: 0, marginRight: 0,
                 })
             },
         })
@@ -36,7 +37,11 @@ void function() {
         '(min-width: 1000px)': function() {
             gsap.timeline({
                 scrollTrigger: {
-                    trigger: '.benefits', start: '30% 30%', /*end: '100% 0',*/ pin: true, scrub: 1, markers: true,
+                    trigger: '.benefits',
+                    start: '30% 30%',
+                    pin: true,
+                    scrub: 1,
+                    markers: true,
                 },
             })
                 .fromTo(itemsList, {
@@ -44,7 +49,7 @@ void function() {
                 }, {
                     y: -translateY,
                 })
-                .fromTo('.benefits .drag', {
+                .fromTo('.benefits__content .progressbar .drag', {
                     width: 0,
                 }, { width: '100%' }, 0)
         },
@@ -56,13 +61,17 @@ void function() {
     if (!itemsWrapper) return
 
     const itemsList = document.querySelector('.stages__list')
-    const translateX = itemsList.offsetWidth - itemsWrapper.offsetWidth + 50
+    const translateX = itemsList.offsetWidth - itemsWrapper.offsetWidth + 160
 
     ScrollTrigger.matchMedia({
         '(min-width: 1000px)': function() {
             gsap.timeline({
                 scrollTrigger: {
-                    trigger: '.stages', start: '60% 50%', end: '100% 20%%', pin: true, scrub: 1, //markers: true,
+                    trigger: '.stages',
+                    start: '60% 50%',
+                    end: '100% 20%%',
+                    pin: true,
+                    scrub: 1,
                 },
             })
                 .fromTo(itemsList, {
