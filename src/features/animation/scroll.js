@@ -18,7 +18,12 @@ void function() {
                         end: '80% 50%',
                         scrub: true,
                         onLeave: () => ScrollTrigger.refresh()
-                    }, maxWidth: '100%', width: '100%', height: '600px', marginLeft: 0, marginRight: 0,
+                    },
+                    maxWidth: '100%',
+                    width: '100%',
+                    height: '600px',
+                    marginLeft: 0,
+                    marginRight: 0,
                 })
             },
         })
