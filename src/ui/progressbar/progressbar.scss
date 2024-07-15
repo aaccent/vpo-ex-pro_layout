@@ -1,4 +1,4 @@
-@use "styles/utils";
+@use "../../styles/utils";
 
 .swiper-progressbar {
     position: relative;
@@ -17,16 +17,13 @@
     height: 2px;
     display: block;
     background-color: var(--base-gray);
-    --progress: 40%;
 
-    &::before {
-        content: "";
+    .drag {
         position: absolute;
-        top: 0;
         left: 0;
-        width: var(--progress);
-        height: 100%;
+        top: 0;
+        bottom: 0;
         background-color: var(--base-black);
-        @include utils.transition(width);
     }
+
 }

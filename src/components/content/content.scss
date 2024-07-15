@@ -39,13 +39,16 @@
     }
 
     &__text {
-        margin-left: auto;
-        width: 100%;
-        max-width: 831px;
+        position: relative;
+
+        & * {
+            margin-left: auto;
+            width: 100%;
+            max-width: 831px;
+        }
     }
 
     p {
-        margin-left: auto;
         padding-right: 243px;
         font: 400 1.8rem/1.33 var(--inter);
 
@@ -55,7 +58,9 @@
     }
 
     img {
-        margin: 40px 0;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        margin-right: 243px;
         width: 588px;
         height: 287px;
         display: block;
