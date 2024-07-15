@@ -13,10 +13,9 @@ void function() {
             '(min-width: 1000px)': function() {
                 gsap.to(image, {
                     scrollTrigger: {
-                        trigger: '.content__text',
+                        trigger: image,
                         start: 'top 70%',
                         end: '80% 50%',
-                        pin: false,
                         scrub: true,
                         onLeave: () => ScrollTrigger.refresh()
                     }, maxWidth: '100%', width: '100%', height: '600px', marginLeft: 0, marginRight: 0,
@@ -41,7 +40,6 @@ void function() {
                     start: '30% 30%',
                     pin: true,
                     scrub: 1,
-                    markers: true,
                 },
             })
                 .fromTo(itemsList, {
