@@ -22,11 +22,16 @@
         &::after {
             content: "";
             position: absolute;
-            background-color: hsla(0, 0%, 0%, 0.2);
+            background-color: transparent;
+            @include utils.transition(background-color);
             inset: 0;
         }
 
         @include utils.hover {
+            &::after {
+                background-color: hsla(0, 0%, 0%, 0.2);
+            }
+
             .spheres__item-img {
                 opacity: 1;
                 visibility: visible;
