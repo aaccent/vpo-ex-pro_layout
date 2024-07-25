@@ -32,9 +32,18 @@
   &__title {
     color: var(--base-white);
     font: 600 6.2rem/1.06 var(--involve);
-    max-width: 888px;
+    max-width: 900px;
     width: 100%;
     margin-bottom: 72px;
+  }
+}
+
+@media only screen and (max-width: utils.$desktop1366) {
+  .page-hero {
+    &__tile {
+      /* @skip-scaling */
+        max-width: 800px;
+    }
   }
 }
 
