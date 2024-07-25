@@ -1,10 +1,4 @@
-const {
-  shorthandProps,
-  longHandProps,
-  allowedUnits,
-  defaultOpts,
-  targetProps,
-} = require('./config.cjs')
+const { shorthandProps, longHandProps, allowedUnits, defaultOpts, targetProps } = require('./config.cjs')
 const { AtRule, Container, Rule, Declaration } = require('postcss')
 
 const targetPropsRegex = new RegExp(`(${targetProps.join('|')})`)
@@ -26,7 +20,7 @@ function convertValue(rawValue, mod = 1) {
   const valueMatch = rawValue.match(/([\d.-]+)(\w+)/)
   if (!valueMatch) return rawValue
 
-  const [ , value, unit ] = valueMatch
+  const [, value, unit] = valueMatch
   if (value === '0' || value === '9999' || !value || !allowedUnits.includes(unit)) {
     return rawValue
   }
@@ -46,23 +40,33 @@ function declHandler(decl) {
   if (shorthandProps.includes(decl.prop)) {
     if (decl.value.startsWith('calc(')) return
 
-    return decl.value.split(' ')
-      .map((i) => convertValue(i, 1))
-      .join(' ')
+    return decl.value
+        .split(' ')
+        .map((i) => convertValue(i, 1))
+        .join(' ')
   }
 
   if (longHandProps.includes(decl.prop)) {
     return convertValue(decl.value, globalOpts.defaultMod)
   }
 
-  if (decl.prop === 'font') {
-    if (!cssVariableRegex.test(decl.value)) return
+  if (decl.prop === 'font' && cssVariableRegex.test(decl.value)) {
     const fontVariableName = decl.value.match(cssVariableRegex)[1]
     const fontSizeVariableName = allVariablesValues[fontVariableName]?.match(cssVariableRegex)?.[1]
 
     if (fontSizeVariableName && !fontVars.includes(fontSizeVariableName)) {
       fontVars.push(fontSizeVariableName)
+      return
     }
+  }
+
+  if (decl.prop === 'font') {
+    if (decl.value.startsWith('calc(')) return
+
+    return decl.value
+        .split(' ')
+        .map((i) => convertValue(i, globalOpts.fontSizeMod))
+        .join(' ')
   }
 
   if (decl.prop === 'font-size') {
@@ -78,7 +82,7 @@ function declHandler(decl) {
  * @param {string} selector
  * */
 function needDodgeSelector(selector) {
-  return globalOpts.dodgeSelectors.some(rule => {
+  return globalOpts.dodgeSelectors.some((rule) => {
     switch (rule.type) {
       case 'includes':
         return selector.includes(rule.value)
@@ -93,13 +97,10 @@ function needDodgeSelector(selector) {
  * @return {boolean}
  * */
 function checkMediaRule(media) {
-  const match = [ ...media.matchAll(/(?:max|min)-width:? (\d+)px/g) ]
+  const match = [...media.matchAll(/(?:max|min)-width:? (\d+)px/g)]
 
   for (const matchItem of match) {
-    if (
-      Number(matchItem[1]) >= globalOpts.minMedia
-      && Number(matchItem[1]) <= globalOpts.maxMedia
-    ) {
+    if (Number(matchItem[1]) >= globalOpts.minMedia && Number(matchItem[1]) <= globalOpts.maxMedia) {
       return true
     }
   }
@@ -114,15 +115,13 @@ function checkMediaRule(media) {
 function parentIsMedia(parent) {
   if (!(parent instanceof AtRule)) return false
 
-  return (parent.type === 'atrule' && parent.name === 'media')
+  return parent.type === 'atrule' && parent.name === 'media'
 }
 
 /** @property {Container} parent */
 function checkParent(parent) {
-  if (!globalOpts.skipMedia && 'maxMedia' in globalOpts || 'minMedia' in globalOpts) {
-    return parentIsMedia(parent)
-      ? checkMediaRule(parent.params)
-      : true
+  if ((!globalOpts.skipMedia && 'maxMedia' in globalOpts) || 'minMedia' in globalOpts) {
+    return parentIsMedia(parent) ? checkMediaRule(parent.params) : true
   }
 
   return true
@@ -167,7 +166,7 @@ function limitRule(rule, root, declRegex) {
  * @param {import('postcss').root} root
  * */
 function pluginMain(root) {
-  root.walkDecls(/^--/, decl => {
+  root.walkDecls(/^--/, (decl) => {
     allVariablesValues[decl.prop] = decl.value
   })
 
@@ -191,7 +190,7 @@ function pluginMain(root) {
   initRule.append(initWidthDecl, initWidthUnitsDecl, screenDeltaDecl)
   root.prepend(initRule)
 
-  globalOpts.initWidth.forEach(item => {
+  globalOpts.initWidth.forEach((item) => {
     const decl = new Declaration({
       prop: '--init-width',
       value: `${item.width}`,
@@ -210,7 +209,7 @@ function pluginMain(root) {
     }
   })
 
-  root.walkRules(rule => {
+  root.walkRules((rule) => {
     if (rule.prev()?.type === 'comment' && rule.prev()?.text.includes('@skip-scaling')) {
       return rule.prev().remove()
     }
