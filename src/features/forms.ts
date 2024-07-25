@@ -47,7 +47,10 @@ function validateForm(form: HTMLFormElement): Boolean {
 
     requiredInputs.forEach(input => {
         if (input.type === 'text' && input.value !== '') return
-        if (input.type === 'tel' && input.value.length === 16) return
+        if (input.type === 'tel') {
+            const digits = input.value.match(/\d/g)
+            if (digits?.length === 11) return
+        }
 
         valid = false
         input.classList.add('invalid')
