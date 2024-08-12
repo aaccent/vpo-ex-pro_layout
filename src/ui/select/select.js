@@ -17,11 +17,12 @@ void function() {
             if (option.closest('.select-lang')) {
                 const attr = option.querySelector('button').textContent
                 option.setAttribute('data-lang', attr.toLowerCase())
+            } else {
+                option.addEventListener('click', (e) => {
+                    selected.innerHTML = e.currentTarget.innerHTML
+                    input.value = e.currentTarget.textContent
+                })
             }
-            option.addEventListener('click', (e) => {
-                selected.innerHTML = e.currentTarget.innerHTML
-                input.value = e.currentTarget.textContent
-            })
         })
     })
 }()
@@ -37,12 +38,14 @@ void function() {
     }
 
     en.addEventListener('click', () => {
+        selected.innerHTML = en.innerHTML
         if (!window.location.pathname.match(/^\/en\//)) {
             window.location.replace(`${window.location.origin}/en${window.location.pathname}`)
         }
     })
 
     ru.addEventListener('click', () => {
+        selected.innerHTML = ru.innerHTML
         if (window.location.pathname.match(/^\/en\//)) {
             const newPath = window.location.pathname.replace('/en', '')
             window.location.replace(`${window.location.origin}${newPath}`)
