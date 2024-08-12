@@ -40,7 +40,7 @@ void function() {
 
     ru.addEventListener('click', () => {
         if (window.location.pathname.match(/^\/en\//)) {
-            const newPath = window.location.pathname.replace('/en/', '')
+            const newPath = window.location.pathname.replace('/en', '')
             window.location.replace(`${window.location.origin}${newPath}`)
         }
     })
