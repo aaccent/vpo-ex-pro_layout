@@ -23,8 +23,6 @@ void function() {
 }()
 
 void function() {
-    console.log(window.location.pathname)
-    console.log(window.location.origin)
     const langBtnItems = document.querySelectorAll('.select-lang__item ')
     langBtnItems.forEach(item => {
         const attr = item.querySelector('button').textContent
@@ -34,12 +32,15 @@ void function() {
     const ru = document.querySelector('li[data-lang = "ru"]')
     const en = document.querySelector('li[data-lang = "en"]')
     en.addEventListener('click', () => {
-        window.location.replace(`${window.location.origin}/en${window.location.pathname}`)
+        if (!window.location.pathname.match(/^\/en\//)) {
+            window.location.replace(`${window.location.origin}/en${window.location.pathname}`)
+        }
+
     })
 
     ru.addEventListener('click', () => {
-        if (window.location.pathname.includes('/en')) {
-            const newPath = window.location.pathname.replace('/en', '')
+        if (window.location.pathname.match(/^\/en\//)) {
+            const newPath = window.location.pathname.replace('/en/', '')
             window.location.replace(`${window.location.origin}${newPath}`)
         }
     })
