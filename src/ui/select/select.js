@@ -13,6 +13,12 @@ void function() {
             list.classList.toggle('_opened')
         })
 
+        const selectedLang = selected.querySelector('button')
+        if (window.location.pathname.match(/^\/en\//)) {
+            selectedLang.textContent = 'EN'
+        }
+
+
         options.forEach(option => {
             option.addEventListener('click', (e) => {
                 selected.innerHTML = e.currentTarget.innerHTML
