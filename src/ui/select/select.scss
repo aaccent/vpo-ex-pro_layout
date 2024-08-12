@@ -38,6 +38,12 @@
     }
 
     &__selected {
+        &:not(:is(.select-lang)) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
         img {
             margin-right: 6px;
         }

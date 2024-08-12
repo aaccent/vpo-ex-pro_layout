@@ -1,28 +1,4 @@
 void function() {
-    const langBtnItems = document.querySelectorAll('.select-lang__item ')
-    langBtnItems.forEach(item => {
-        const attr = item.querySelector('button').textContent
-        item.setAttribute('data-lang', attr.toLowerCase())
-    })
-
-    const ru = document.querySelector('li[data-lang = "ru"]')
-    const en = document.querySelector('li[data-lang = "en"]')
-    en.addEventListener('click', () => {
-        if (!window.location.pathname.match(/^\/en\//)) {
-            window.location.replace(`${window.location.origin}/en${window.location.pathname}`)
-        }
-
-    })
-
-    ru.addEventListener('click', () => {
-        if (window.location.pathname.match(/^\/en\//)) {
-            const newPath = window.location.pathname.replace('/en', '')
-            window.location.replace(`${window.location.origin}${newPath}`)
-        }
-    })
-}()
-
-void function() {
     const selects = document.querySelectorAll('.select')
 
     if (selects.length === 0) return
@@ -37,12 +13,11 @@ void function() {
             list.classList.toggle('_opened')
         })
 
-        const en = document.querySelector('li[data-lang = "en"]')
-        if (window.location.pathname.match(/^\/en\//)) {
-            selected.innerHTML = en.innerHTML
-        }
-
         options.forEach(option => {
+            if (option.closest('.select-lang')) {
+                const attr = option.querySelector('button').textContent
+                option.setAttribute('data-lang', attr.toLowerCase())
+            }
             option.addEventListener('click', (e) => {
                 selected.innerHTML = e.currentTarget.innerHTML
                 input.value = e.currentTarget.textContent
@@ -51,3 +26,26 @@ void function() {
     })
 }()
 
+void function() {
+    const langSelect = document.querySelector('.select-lang')
+    const selected = langSelect.querySelector('.select__selected')
+    const ru = langSelect.querySelector('li[data-lang = "ru"]')
+    const en = langSelect.querySelector('li[data-lang = "en"]')
+
+    if (window.location.pathname.match(/^\/en\//)) {
+        selected.innerHTML = en.innerHTML
+    }
+
+    en.addEventListener('click', () => {
+        if (!window.location.pathname.match(/^\/en\//)) {
+            window.location.replace(`${window.location.origin}/en${window.location.pathname}`)
+        }
+    })
+
+    ru.addEventListener('click', () => {
+        if (window.location.pathname.match(/^\/en\//)) {
+            const newPath = window.location.pathname.replace('/en', '')
+            window.location.replace(`${window.location.origin}${newPath}`)
+        }
+    })
+}()
