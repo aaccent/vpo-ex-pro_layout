@@ -28,27 +28,29 @@ void function() {
 }()
 
 void function() {
-    const langSelect = document.querySelector('.select-lang')
-    const selected = langSelect.querySelector('.select__selected')
-    const ru = langSelect.querySelector('li[data-lang = "ru"]')
-    const en = langSelect.querySelector('li[data-lang = "en"]')
+    window.addEventListener('load', () => {
+        const langSelect = document.querySelector('.select-lang')
+        const selected = langSelect.querySelector('.select__selected')
+        const ru = langSelect.querySelector('li[data-lang = "ru"]')
+        const en = langSelect.querySelector('li[data-lang = "en"]')
 
-    if (window.location.pathname.match(/^\/en\//)) {
-        selected.innerHTML = en.innerHTML
-    }
-
-    en.addEventListener('click', () => {
-        selected.innerHTML = en.innerHTML
-        if (!window.location.pathname.match(/^\/en\//)) {
-            window.location.replace(`${window.location.origin}/en${window.location.pathname}`)
-        }
-    })
-
-    ru.addEventListener('click', () => {
-        selected.innerHTML = ru.innerHTML
         if (window.location.pathname.match(/^\/en\//)) {
-            const newPath = window.location.pathname.replace('/en', '')
-            window.location.replace(`${window.location.origin}${newPath}`)
+            selected.innerHTML = en.innerHTML
         }
+
+        en.addEventListener('click', () => {
+            selected.innerHTML = en.innerHTML
+            if (!window.location.pathname.match(/^\/en\//)) {
+                window.location.replace(`${window.location.origin}/en${window.location.pathname}`)
+            }
+        })
+
+        ru.addEventListener('click', () => {
+            selected.innerHTML = ru.innerHTML
+            if (window.location.pathname.match(/^\/en\//)) {
+                const newPath = window.location.pathname.replace('/en', '')
+                window.location.replace(`${window.location.origin}${newPath}`)
+            }
+        })
     })
 }()
