@@ -16,8 +16,8 @@ include layout/utils
   .select__selected.select-lang__selected.select-lang__item
     +img(options[0].flagIcon)
     +wrapBreak: button=options[0].lang
-  ul.select__list
+  div.select__list
     each option in options
-      li.select__item.select-lang__item
+      +anchor.select__item.select-lang__item
         +img(option.flagIcon)
         +wrapBreak: button=option.lang

@@ -28,11 +28,10 @@ void function() {
 }()
 
 void function() {
-    window.addEventListener('load', () => {
         const langSelect = document.querySelector('.select-lang')
         const selected = langSelect.querySelector('.select__selected')
-        const ru = langSelect.querySelector('li[data-lang = "ru"]')
-        const en = langSelect.querySelector('li[data-lang = "en"]')
+        const ru = langSelect.querySelector('a[data-lang = "ru"]')
+        const en = langSelect.querySelector('a[data-lang = "en"]')
 
         if (window.location.pathname.match(/^\/en\//)) {
             selected.innerHTML = en.innerHTML
@@ -52,5 +51,4 @@ void function() {
                 window.location.replace(`${window.location.origin}${newPath}`)
             }
         })
-    })
 }()
