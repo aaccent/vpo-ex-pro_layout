@@ -19,10 +19,8 @@ void function() {
                         scrub: true,
                         onLeave: () => ScrollTrigger.refresh()
                     },
-                    maxWidth: '100%',
-                    width: '100%',
+                    width: '800px',
                     height: '600px',
-                    marginLeft: 0,
                     marginRight: 0,
                 })
             },
