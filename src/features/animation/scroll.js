@@ -21,7 +21,7 @@ void function() {
                     },
                     width: '800px',
                     height: '600px',
-                    marginRight: 0,
+                    marginLeft: 0,
                 })
             },
         })
