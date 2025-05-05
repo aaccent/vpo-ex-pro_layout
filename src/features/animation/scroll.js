@@ -5,27 +5,26 @@ gsap.registerPlugin(ScrollTrigger)
 
 
 void function() {
-    // const contentImages = document.querySelectorAll('.content img')
-    // if (!contentImages.length) return
-    //
-    // contentImages.forEach(image => {
-    //     ScrollTrigger.matchMedia({
-    //         '(min-width: 1000px)': function() {
-    //             gsap.to(image, {
-    //                 scrollTrigger: {
-    //                     trigger: image,
-    //                     start: 'top 70%',
-    //                     end: '80% 50%',
-    //                     scrub: true,
-    //                     onLeave: () => ScrollTrigger.refresh()
-    //                 },
-    //                 width: '800px',
-    //                 height: '600px',
-    //                 marginLeft: 0,
-    //             })
-    //         },
-    //     })
-    // })
+    const contentImages = document.querySelectorAll('.content img')
+    if (!contentImages.length) return
+
+    contentImages.forEach(image => {
+        ScrollTrigger.matchMedia({
+            '(min-width: 1000px)': function() {
+                gsap.to(image, {
+                    scrollTrigger: {
+                        trigger: image,
+                        start: 'top 70%',
+                        end: '80% 50%',
+                        scrub: true,
+                        onLeave: () => ScrollTrigger.refresh()
+                    },
+                   maxWidth: '100%',
+                    height: '800px',
+                })
+            },
+        })
+    })
 }()
 
 void function() {
